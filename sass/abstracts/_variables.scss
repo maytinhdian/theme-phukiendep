@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: "Open Sans", "Helvetica Neue Light", "Helvetica Neue",
+  "Helvetica", "Arial", sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+  "Monaco", monospace !default;
+
+$fa-font-path: "../../assets/fonts/webfonts"; 
+
+///Theme Color
+/// @type Color
+
+$theme-color: (
+  "primary-color": rgb(235, 208, 61, 92),
+  "secondary-color": rgb(75, 61, 235, 92),
+  "accent-color": rgb(235, 77, 61, 92),
+  "text-color": rgb(0, 0, 0),
+  "background-color": rgb(81, 107, 93, 42),
+  "border-color": rgb(61, 235, 142, 92),
+  "link-color": rgb(84, 89, 150, 59),
+) !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoint: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://phukiendep.local/assets/';
+$base-url: "/assets/" !default;

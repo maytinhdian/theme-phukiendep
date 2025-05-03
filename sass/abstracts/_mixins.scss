@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+@use "sass:map"; 
+@use "variables";
+
+@mixin sm {
+  @media (max-width: map.get(variables.$breakpoint, "sm")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: map.get(variables.$breakpoint, "md")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: map.get(variables.$breakpoint, "lg")) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (max-width: map.get(variables.$breakpoint, "xl")) {
+    @content;
+  }
+}
+@mixin xxl {
+  @media (max-width: map.get(variables.$breakpoint, "xxl")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}

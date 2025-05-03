@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// 1. Vendors
+@use 'vendors/normalize';
+
+// 2. Base stuff
+@use 'base/base';
+@use 'base/fonts';
+@use 'base/helpers';
+@use 'base/typography';
+
+// 3. Layout-related sections
+@use 'layout/footer';
+@use 'layout/header';
+@use 'layout/grid';
+
+// 4. Components
+@use 'components/button';
+@use 'components/navbar';
+
+// 5. Pages
+@use 'pages/home';
+@use 'pages/product-list';
+
+// 6. Themes
+@use 'themes/default';
+
+
+// 7. Vendors
+@use 'vendors/fontawesome/fontawesome.scss';

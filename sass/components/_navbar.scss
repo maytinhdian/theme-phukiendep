@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "../abstracts";
+
+@mixin nav-menu {
+  text-transform: uppercase;
+  ul {
+    display: flex;
+    justify-content: left;
+    list-style-type: none;
+  }
+  li {
+   
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      color: map.get(abstracts.$theme-color, "border-color");
+    }
+  }
+  a {
+    text-decoration: none;
+    color: map.get(abstracts.$theme-color, "accent-color");
+    display: block;
+    font-family: "Coiny", sans-serif;
+    &:hover {
+      color: map.get(abstracts.$theme-color, "secondary-color");
+    }
+  }
+}

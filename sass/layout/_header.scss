@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+@use "../components";
+@use "../abstracts" as *;
+
+.site-header {
+  grid-area: header;
+  display: grid;
+  grid-template-rows: 5rem 5rem 5rem;
+  align-items: center;
+  gap: 1rem;
+  grid-template-areas:
+    "header-top"
+    "header-main"
+    "header-bottom";
+}
+.header-top {
+  grid-area: header-top;
+  display: flex;
+  @include components.nav-menu;
+}
+.header-main {
+  grid-area: header-main;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__site-branding {
+    display: flex;
+    align-items: center;
+  }
+}
+.site-branding__logo {
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-bottom {
+  grid-area: header-bottom;
+  display: flex;
+  justify-content: center;
+  @include components.nav-menu;
+
+  @include lg {
+    display: none;
+  }
+}

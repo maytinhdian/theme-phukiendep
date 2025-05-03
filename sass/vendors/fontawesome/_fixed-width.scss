@@ -1,0 +1,11 @@
+// fixed-width icons
+// -------------------------
+@use "variables" as *;
+@use "mixins" as *;
+@use "functions" as *;
+
+
+.#{$fa-css-prefix}-fw {
+  text-align: center;
+  width: $fa-fw-width;
+}

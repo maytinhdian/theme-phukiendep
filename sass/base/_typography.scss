@@ -1,0 +1,17 @@
+
+/**
+ * Basic typography style for copy text
+ */
+
+@use '../abstracts';
+@use "sass:map";
+body {
+  color: map.get(abstracts.$theme-color,"text-color");
+  font: normal 125% / 1.4 abstracts.$text-font-stack;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Coiny', sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}

@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+// src: url('https://your_domain/wp-content/themes/[your_theme]/assets/fonts/your_font_file_name.eot?#iefix') format('embedded-opentype'),
+// url('https://your_domain/wp-content/themes/[your_theme]/assets/fonts/your_font_file_name.woff2') format('woff2'),
+// url('https://your_domain/wp-content/themes/[your_theme]/assets/fonts/your_font_file_name.woff') format('woff'),
+// url('https://your_domain/wp-content/themes/[your_theme]/assets/fonts/your_font_file_name.ttf') format('truetype'),
+// url('https://your_domain/wp-content/themes/[your_theme]/assets/fonts/your_font_file_name.svg#ge_ss_twolight') format('svg');
+
+@font-face {
+  font-family: "Coiny";
+  src: url("http://phukiendiep.local/wp-content/themes/phukiendep/assets/fonts/coiny-regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Awesome Font";
+  src: url("http://phukiendiep.local/wp-content/themes/phukiendep/assets/fonts/fa-regular-400.ttf")
+      format("truetype"),
+    url("http://phukiendiep.local/wp-content/themes/phukiendep/assets/fonts/fa-regular-400.woff2")
+      format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
