@@ -4,6 +4,9 @@
 @use "sass:map"; 
 @use "variables";
 
+
+//Breakpoint mixins
+// -----------------------------------------------------------------------------
 @mixin sm {
   @media (max-width: map.get(variables.$breakpoint, "sm")) {
     @content;
@@ -37,3 +40,20 @@
     @content;
   }
 }
+
+
+//Font-face mixin
+// -----------------------------------------------------------------------------
+
+@mixin addFontFace($font-faces) {
+  @each $font-face in $font-faces { 
+
+   @font-face{
+      font-family: map.get($font-face, "family");
+      src: url(map.get($font-face, "path")) format(map.get($font-face, "format"));
+      font-weight: map.get($font-face, "weight");
+      font-style: map.get($font-face, "style");
+   }
+  }
+}
+

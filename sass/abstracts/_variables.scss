@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
-
+@use "sass:map";
 /// Regular font family
 /// @type List
 $text-font-stack: "Open Sans", "Helvetica Neue Light", "Helvetica Neue",
@@ -27,10 +27,6 @@ $theme-color: (
   "link-color": rgb(84, 89, 150, 59),
 ) !default;
 
-/// Container's maximum width
-/// @type Length
-$max-width: 1180px !default;
-
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
@@ -48,9 +44,48 @@ $breakpoint: (
 ///   $site-url: 'http://phukiendep.local/';
 $site-url: "http://phukiendep.local/" !default;
 
+//Theme Name
+/// @type String
+$theme-name: "phukiendep" !default;
+
 //Assets URL
 /// @type String
-///
 ///$asset-url: "http://phukiendep.local/wp-content/themes/phukiendep/assets/" !default;
 ///
-$asset-url: "#{$site-url}wp-content/themes/phukiendep/assets/" !default;
+$asset-url: "#{$site-url}wp-content/themes/#{$theme-name}/assets/" !default;
+
+///Font-face variables
+/// @type sass:map
+
+$font-faces: (
+   (
+    "family":"Roboto",
+    "path": "#{$asset-url}fonts/roboto/Roboto-Black.ttf",
+    "format":"truetype",
+    "weight": normal,
+    "style": normal,
+  ),
+ (
+  "family":"Roboto",
+    "path": "#{$asset-url}fonts/roboto/Roboto-BlackItalic.ttf",
+    "weight": normal,
+    "style": italic,
+  ),
+  (
+    "family":"Roboto",
+    "path": "#{$asset-url}fonts/roboto/Roboto-Bold.ttf",
+    "weight": bold,
+    "style": normal,
+  ),
+  (
+    "family":"Roboto",
+    "path": "#{$asset-url}fonts/roboto/Roboto-BoldItalic.ttf",
+    "weight": bold,
+    "style": italic,
+  ),
+
+) !default;
+
+// @each $font-face in $font-faces {
+//   @debug map.get($font-face, "family");
+// }

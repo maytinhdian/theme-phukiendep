@@ -16,3 +16,16 @@ $asset-base-path: "http://phukiendiep.local/wp-content/themes/phukiendep" !defau
 @function asset($type, $file) {
   @return url($asset-base-path + "/" + $type + "/" + $file);
 }
+
+
+///Create font map
+/// @access public
+/// @param {String} $file - Font file name, including extension
+@function createFontMap($file, $weight:normal, $style:normal) {
+  $def: (
+    fontFile: $file,
+    weight: $weight,
+    style: $style
+  );
+  @return $def;
+}
