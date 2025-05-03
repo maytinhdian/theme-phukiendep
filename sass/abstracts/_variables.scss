@@ -12,7 +12,7 @@ $text-font-stack: "Open Sans", "Helvetica Neue Light", "Helvetica Neue",
 $code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
   "Monaco", monospace !default;
 
-$fa-font-path: "../../assets/fonts/webfonts"; 
+$fa-font-path: "../../assets/fonts/webfonts";
 
 ///Theme Color
 /// @type Color
@@ -45,5 +45,12 @@ $breakpoint: (
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
-///   $base-url: 'http://phukiendep.local/assets/';
-$base-url: "/assets/" !default;
+///   $site-url: 'http://phukiendep.local/';
+$site-url: "http://phukiendep.local/" !default;
+
+//Assets URL
+/// @type String
+///
+///$asset-url: "http://phukiendep.local/wp-content/themes/phukiendep/assets/" !default;
+///
+$asset-url: "#{$site-url}wp-content/themes/phukiendep/assets/" !default;
