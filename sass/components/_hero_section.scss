@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+@use "sass:map";
+
+.hero-section {
+    flex-grow: 1;
+    width: 100%;
+  border-color: rgb(233, 224, 224);
+  border-width: 2px;
+}

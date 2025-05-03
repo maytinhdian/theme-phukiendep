@@ -24,7 +24,10 @@
     font-size: 1.8rem;
     letter-spacing: 1px;
     &:hover {
-      color: map.get(abstracts.$theme-color-light, "accent-color");
+      color: map.get(abstracts.$theme-color-light, "border-color");
+    }
+    &:active {
+      color: map.get(abstracts.$theme-color-light, "border-color");
     }
   }
 }
