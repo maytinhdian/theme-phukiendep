@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -11,24 +12,31 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'phukiendep' ) ); ?>">
+<footer id="colophon" class="site-footer">
+	<div class="site-info">
+		<div>
+			<a href="<?php echo esc_url(__('https://wordpress.org/', 'phukiendep')); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'phukiendep' ), 'WordPress' );
+				printf(esc_html__('Proudly powered by %s', 'phukiendep'), 'WordPress');
 				?>
 			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'phukiendep' ), 'phukiendep', '<a href="https://maytinhdian.com/tnhalk">Lê Thanh Nhã</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+		</div>
+		<div>
+			<?php
+			/* translators: 1: Theme name, 2: Theme author. */
+			printf(esc_html__('Theme: %1$s by %2$s.', 'phukiendep'), 'phukiendep', '<a href="https://maytinhdian.com/tnhalk">Lê Thanh Nhã</a>');
+			?>
+		</div>
+	</div><!-- .site-info -->
+	<div class="footer-copyright">
+		<p><?php echo wp_kses_post(get_theme_mod('footer-copyright', 'Copyrights TMT Innovative Solutions Co., ltd')) ?></p>
+	</div>
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

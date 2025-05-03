@@ -1,7 +1,11 @@
 <div class="header-top">
-    <ul>
-        <li><a href="#" style="font-family: Coiny; font-size: 1.2rem;">Hotline: 0399XXXYYY</a></li>
-        <!--outputs a camera icon-->
-     
-    </ul>
+    <div class="header-top__cta">
+        <ul>
+            <li><a href="#"><?php echo wp_kses_post(get_theme_mod('cellphone_number_setting', '')) ?></a></li>
+            <!--outputs a camera icon-->
+        </ul>
+    </div>
+    <div class="header-top__logon">
+        <i class="fa-solid fa-user fa-shake"></i>
+    </div>
 </div>

@@ -2,6 +2,7 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 @use "sass:map";
+@use "sass:color";
 /// Regular font family
 /// @type List
 $text-font-stack: "Roboto","Inter","Coiny", sans-serif !default;
@@ -16,16 +17,31 @@ $fa-font-path: "../../assets/fonts/webfonts";
 ///Theme Color
 /// @type Color
 
-$theme-color: (
-  "primary-color": rgb(235, 208, 61, 92),
-  "secondary-color": rgb(75, 61, 235, 92),
-  "accent-color": rgb(235, 77, 61, 92),
-  "text-color": rgb(0, 0, 0),
-  "background-color": rgb(81, 107, 93, 42),
-  "border-color": rgb(61, 235, 142, 92),
-  "link-color": rgb(84, 89, 150, 59),
+$theme-color-light: (
+  "primary-color": #ffd200,
+  "secondary-color":#00deff,
+  "accent-color":#ff46b1 ,
+  "text-color-white":#ffffff ,
+  "text-color-black":#000000 ,
+  "background-color":#353639 ,
+  "border-color":#cca800 ,
+  "link-color":#ff7ec8 ,
 ) !default;
 
+$theme-color-dark: (
+  "primary-color": #ffd200,
+  "secondary-color":#00deff,
+  "accent-color":#ff46b1 ,
+  "text-color-white":#ffffff ,
+  "text-color-black":#000000 ,
+  "background-color":#353639 ,
+  "border-color":#cca800 ,
+  "link-color":#ff7ec8 ,
+) !default;
+
+
+
+// @debug color.adjust(#ffd200, $lightness:10%); // #a1a5af
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels

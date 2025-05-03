@@ -6,8 +6,9 @@
 @use '../abstracts';
 @use "sass:map";
 body {
-  color: map.get(abstracts.$theme-color,"text-color");
+  color: map.get(abstracts.$theme-color-light,"text-color-white");
   font: normal 125% / 1.4 abstracts.$text-font-stack;
+  background-color: map.get(abstracts.$theme-color-light,"background-color");
 }
 
 h1,h2,h3,h4,h5,h6 {

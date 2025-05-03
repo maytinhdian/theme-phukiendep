@@ -13,16 +13,18 @@
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease-in-out;
     &:hover {
-      color: map.get(abstracts.$theme-color, "border-color");
+      color: map.get(abstracts.$theme-color-light, "border-color");
     }
   }
   a {
     text-decoration: none;
-    color: map.get(abstracts.$theme-color, "accent-color");
+    color: map.get(abstracts.$theme-color-light, "text-color-white");
     display: block;
     font-family: "Coiny", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
     &:hover {
-      color: map.get(abstracts.$theme-color, "secondary-color");
+      color: map.get(abstracts.$theme-color-light, "accent-color");
     }
   }
 }

@@ -17,7 +17,9 @@
 }
 .header-top {
   grid-area: header-top;
-  display: flex;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   @include components.nav-menu;
 }
 .header-main {

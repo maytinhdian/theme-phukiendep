@@ -53,8 +53,8 @@ $fa-stack-width           : $fa-fw-width * 2 !default;
 $fa-stack-z-index         : auto !default;
 
 $fa-font-display          : block !default;
-$fa-font-path             : "#{main-variables.$asset-url}webfonts" !default; //Modify this path to your font path 
-                                                                            // @debug $fa-font-path;
+$fa-font-path             : "#{main-variables.$asset-url}fonts/webfonts" !default; //Modify this path to your font path 
+                                                                            @debug $fa-font-path;
 
 
 $fa-var-0: \30;
