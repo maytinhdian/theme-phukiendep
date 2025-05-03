@@ -4,8 +4,7 @@
 @use "sass:map";
 /// Regular font family
 /// @type List
-$text-font-stack: "Open Sans", "Helvetica Neue Light", "Helvetica Neue",
-  "Helvetica", "Arial", sans-serif !default;
+$text-font-stack: "Roboto","Inter","Coiny", sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
@@ -58,30 +57,47 @@ $asset-url: "#{$site-url}wp-content/themes/#{$theme-name}/assets/" !default;
 /// @type sass:map
 
 $font-faces: (
-   (
+  (
     "family":"Roboto",
-    "path": "#{$asset-url}fonts/roboto/Roboto-Black.ttf",
+    "path": "#{$asset-url}fonts/roboto/Roboto-Regular.ttf",
     "format":"truetype",
     "weight": normal,
+    "style": normal,
+  ),
+   (
+    "family":"Roboto",
+    "path": "#{$asset-url}fonts/roboto/Roboto-SemiBold.ttf",
+    "format":"truetype",
+    "weight": bold,
     "style": normal,
   ),
  (
   "family":"Roboto",
     "path": "#{$asset-url}fonts/roboto/Roboto-BlackItalic.ttf",
+    "format":"truetype",
     "weight": normal,
     "style": italic,
   ),
   (
     "family":"Roboto",
     "path": "#{$asset-url}fonts/roboto/Roboto-Bold.ttf",
+    "format":"truetype",
     "weight": bold,
     "style": normal,
   ),
   (
     "family":"Roboto",
     "path": "#{$asset-url}fonts/roboto/Roboto-BoldItalic.ttf",
+    "format":"truetype",
     "weight": bold,
     "style": italic,
+  ),
+  (
+    "family":"Coiny",
+    "path": "#{$asset-url}fonts/coiny-regular.ttf",
+    "format":"truetype",
+    "weight": normal,
+    "style": normal,
   ),
 
 ) !default;

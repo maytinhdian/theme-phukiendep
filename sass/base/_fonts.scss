@@ -5,11 +5,11 @@
 @use "../abstracts" as abs;
 
 ///Setup font-face variables
-@font-face {
-  font-family: "Coiny";
-  src: url("http://phukiendep.local/wp-content/themes/phukiendep/assets/fonts/coiny-regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "Coiny";
+//   src: url("http://phukiendep.local/wp-content/themes/phukiendep/assets/fonts/coiny-regular.ttf") format("truetype");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 @include abs.addFontFace(abs.$font-faces);
 
