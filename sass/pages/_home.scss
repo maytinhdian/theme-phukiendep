@@ -9,45 +9,93 @@
   gap: 0.5rem;
   padding: 0.5rem;
   width: 100%;
+  max-width: $max-width;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 .hero-section {
-  // flex-grow: 1;
   width: 100%;
-  min-height: 50vh;
+  min-height: 40rem;
+  margin-bottom: 6rem;
   background-color: color.adjust(
     map.get($theme-color-light, "background-color"),
     $lightness: 30%
   );
-  border: 2px solid yellow;
+
   border-radius: 0.7rem;
-  padding: 0.5rem;
+  padding: 1rem;
 
   &__content {
+    position: relative;
     display: flex;
-    gap: 1rem;
-    flex-direction: row;
+    width: 100%;
     align-items: center;
-    justify-content: center;
-    text-align: left;
+    column-gap: 0.5rem;
+    flex-direction: row;
+    border: 5px solid transparent;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .content__img {
-    // margin: 0.5rem;
-    width: auto;
+    margin: 0.5rem;
+    flex-grow: 1;
+    min-width: 0;
+    flex-basis: 0;
+    text-align: right;
+  }
+  .content__img img {
+    max-width: 100%;
     height: auto;
+    // object-fit: cover;  // Fix hình ảnh vào khung div , cover không bị méo hình contain bị méo hình Note : height : 100%
   }
   .content__info {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    // align-content: left;
+    justify-content: center;
+    margin: 0.5rem;
+    height: 374px;
     flex-grow: 1;
-    border-width: 1px;
-    border-style: solid;
+    flex-basis: 0;
+    min-width: 0;
+    border: 5px solid transparent;
+  }
+  .slogan {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: 2px;
   }
   .subheading {
+    font-family: "Coiny", cursive;
     font-size: 5rem;
     font-weight: bold;
     letter-spacing: 2px;
-
+    font-variant: small-caps;
     color: map.get($theme-color-light, "primary-color");
+  }
+  .see-more {
+    text-align: right;
+    padding: 1rem 4rem;
+    &__button {
+      height: 3.55rem;
+      width: 20rem;
+      border: 1px solid map.get($theme-color-light, "primary-color");
+      background-color: map.get($theme-color-light, "primary-color");
+      color: color.adjust(
+        map.get($theme-color-light, "border-color"),
+        $lightness: -30%
+      );
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-display: swap;
+      border-radius: 1rem;
+    }
   }
 }

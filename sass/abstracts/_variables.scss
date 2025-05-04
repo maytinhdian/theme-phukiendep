@@ -39,6 +39,10 @@ $theme-color-dark: (
   "link-color":#ff7ec8 ,
 ) !default;
 
+///Site container max width
+/// @type Number
+$max-width: 1200px !default;
+
 
 
 // @debug color.adjust(#ffd200, $lightness:10%); // #a1a5af
