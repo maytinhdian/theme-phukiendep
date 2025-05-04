@@ -1,5 +1,5 @@
-@use '../abstracts';
-
+@use '../abstracts' as * ;
+@use "sass:map";
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
@@ -24,4 +24,12 @@ html {
   box-sizing: inherit;
 }
 
+a {
+  text-decoration: none;
+  color: map.get($theme-color-light, 'link-color');
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    color: map.get($theme-color-light, 'secondary-color');
+  }
+}
 

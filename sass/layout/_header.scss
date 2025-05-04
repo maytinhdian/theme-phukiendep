@@ -24,7 +24,7 @@
     text-align: center;
     padding-right: 0.5rem;
   }
-  &__logon a{
+  &__logon a {
     flex-grow: 1;
     text-transform: lowercase;
     text-align: right;
@@ -37,9 +37,19 @@
   justify-content: space-between;
   align-items: center;
   &__site-branding {
-    display: flex;
-    align-items: center;
+    flex-grow: 1;
   }
+  &__searchbar {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    left: 0px;
+    transform: translateX(-10%);
+  }
+}
+.search-field{
+  height: 3rem;
+  width: 30rem;
 }
 .site-branding__logo {
   height: 9rem;
