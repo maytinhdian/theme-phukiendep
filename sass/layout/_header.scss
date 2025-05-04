@@ -19,6 +19,17 @@
   grid-area: header-top;
   display: flex;
   @include components.nav-menu;
+  &__cta {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 0.5rem;
+  }
+  &__logon a{
+    flex-grow: 1;
+    text-transform: lowercase;
+    text-align: right;
+    padding-left: 0.5rem;
+  }
 }
 .header-main {
   grid-area: header-main;

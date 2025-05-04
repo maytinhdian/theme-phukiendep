@@ -26,7 +26,7 @@
     height: 5px;
     background-color:map.get(abstracts.$theme-color-light, "primary-color");
     position: absolute;
-    top: 110%;
+    top: 120%;
     left: 0;
     transition: all 0.5s;
   }
@@ -36,7 +36,7 @@
     height: 5px;
     background-color: map.get(abstracts.$theme-color-light, "primary-color");
     position: absolute;
-    top: 110%;
+    top: 120%;
     right: 0;
     transition: all 0.5s;
   }

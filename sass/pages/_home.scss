@@ -1,8 +1,53 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
-
+@use "sass:map";
+@use "sass:color";
+@use "../abstracts" as *;
 .home__main {
-  width: 100vw;
+  grid-area: 2/1 / span 2 / span 3;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-section {
+  // flex-grow: 1;
+  width: 100%;
+  min-height: 50vh;
+  background-color: color.adjust(
+    map.get($theme-color-light, "background-color"),
+    $lightness: 30%
+  );
+  border: 2px solid yellow;
+  border-radius: 0.7rem;
+  padding: 0.5rem;
+
+  &__content {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+  .content__img {
+    // margin: 0.5rem;
+    width: auto;
+    height: auto;
+  }
+  .content__info {
+    flex-grow: 1;
+    border-width: 1px;
+    border-style: solid;
+  }
+  .subheading {
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    color: map.get($theme-color-light, "primary-color");
+  }
 }
