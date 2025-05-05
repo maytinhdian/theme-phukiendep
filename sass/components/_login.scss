@@ -1,0 +1,51 @@
+@use "sass:color";
+@use "sass:map";
+@use "../abstracts/" as *;
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: map.get($theme-color-light, "background-color");
+  &__logo {
+    align-self: center;
+    margin-top: 5rem;
+  }
+  &__content {
+    margin: 0 auto;
+    max-width: 50%;
+    max-height: 30%;
+    padding: 2rem;
+    // margin-top: 20rem;
+    border-radius: 7px;
+    color: map.get($theme-color-light, "text-color-black");
+    background-color: map.get($theme-color-light, "primary-color");
+    box-shadow: 0 5px 10px map.get($theme-color-light, "accent-color");
+  }
+  &__content p.login-submit{
+    text-align: center;
+  }
+  &__content p input[type=text],input[type=password]{
+    background-color: color.adjust(
+      map.get($theme-color-light, "background-color"),
+      $lightness: 90%);
+  }
+  .button-primary {
+    background-color: color.adjust(
+      map.get($theme-color-light, "background-color"),
+      $lightness: 40%
+    );
+    color: map.get($theme-color-light, "text-color-white");
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: color.adjust(
+      map.get($theme-color-light, "background-color"),
+      $lightness: 40%
+    );
+    height: 3rem;
+    width: 10rem;
+  }
+}
