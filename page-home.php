@@ -17,7 +17,6 @@ get_header();
 ?>
 
 <main id="primary" class="home__main">
-	
 	<?php get_template_part('template-parts/component/hero', 'section', array()); ?>
 </main><!-- #main -->
 

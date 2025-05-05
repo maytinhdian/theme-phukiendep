@@ -11,7 +11,7 @@
                 <span class="slogan subheading">CÓ</span>
                 <span class="slogan ">máy 99%</span>
             </div>
-            <div class="see-more"><button class="slogan see-more__button" type="button">tìm hiểu thêm...</button></div>
+            <div class="see-more"><a href="" class="btnStack">XEM THÊM ...</a></div>
         </div>
     </div>
 </div>
