@@ -21,7 +21,7 @@
     border-radius: 7px;
     color: map.get($theme-color-light, "text-color-black");
     background-color: map.get($theme-color-light, "primary-color");
-    box-shadow: 0 5px 10px map.get($theme-color-light, "accent-color");
+    box-shadow: 0 3px 8px map.get($theme-color-light, "accent-color");
   }
   &__content p.login-submit{
     text-align: center;

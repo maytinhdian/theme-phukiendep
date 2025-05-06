@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<h1>Blog Page Template</h1>
+	
 		<?php
 		if ( have_posts() ) :
 
