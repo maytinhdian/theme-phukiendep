@@ -26,10 +26,14 @@ html {
 
 a {
   text-decoration: none;
-  color: map.get($theme-color-light, 'link-color');
+  color: map.get($theme-color-light,'secondary-color');
   transition: all 0.5s ease-in-out;
   &:hover {
-    color: map.get($theme-color-light, 'secondary-color');
+    color: map.get($theme-color-light, 'primary-color');
   }
 }
 
+.link{
+  display: inline-block;
+  padding: 1rem;
+}

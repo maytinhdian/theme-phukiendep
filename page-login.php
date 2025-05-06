@@ -37,3 +37,22 @@ template name: Login Page
         </div>
 
     </div>
+    <?php
+
+ $login  = (isset($_GET['login']) ) ? $_GET['login'] : 0;
+
+ if ( $login === "failed" ) {
+
+  echo '<p><strong>ERROR:</strong> Sai username hoặc mật khẩu.</p>';
+
+ } elseif ( $login === "empty" ) {
+
+  echo '<p><strong>ERROR:</strong> Username và mật khẩu không thể bỏ trống.</p>';
+
+ } elseif ( $login === "false" ) {
+
+  echo '<p><strong>ERROR:</strong> Bạn đã thoát ra.</p>';
+
+ }
+
+ ?>

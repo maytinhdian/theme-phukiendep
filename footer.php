@@ -14,6 +14,11 @@
 
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
+		<div class="footer-copyright">
+			<h3 class="footer-copyright-title">
+				<p><?php echo wp_kses_post(get_theme_mod('footer-copyright', 'Copyrights TMT Innovative Solutions Co., ltd')) ?></p>
+			</h3>
+		</div>
 		<div>
 			<a href="<?php echo esc_url(__('https://wordpress.org/', 'phukiendep')); ?>">
 				<?php
@@ -29,9 +34,6 @@
 			?>
 		</div>
 	</div><!-- .site-info -->
-	<div class="footer-copyright">
-		<p><?php echo wp_kses_post(get_theme_mod('footer-copyright', 'Copyrights TMT Innovative Solutions Co., ltd')) ?></p>
-	</div>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
