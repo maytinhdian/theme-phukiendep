@@ -37,24 +37,17 @@
   justify-content: space-between;
   align-items: center;
   &__site-branding {
-    flex-grow: 1;
+    width: 30%;
   }
   &__searchbar {
-    position: relative;
-    flex-grow: 1;
+    // position: relative;
+    width: 50%;
     display: flex;
     left: 0px;
-    transform: translateX(-10%);
+    transform: translateX(-50%);
   }
 }
-.search-field{
-  height: 3rem;
-  width: 30rem;
-}
-.search-submit{
-  height: 3rem;
-  width: 5rem;
-}
+
 .site-branding__logo {
   height: 9rem;
   display: flex;
@@ -65,6 +58,7 @@
   grid-area: header-bottom;
   display: flex;
   justify-content: center;
+
   @include components.nav-menu;
 
   @include lg {

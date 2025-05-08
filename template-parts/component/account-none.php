@@ -5,7 +5,7 @@
         <div class="account-avatar">
             <img src="<?php get_avatar_url(get_current_user_id()) ;?>" alt="<?php echo $current_user->display_name; ?>">
         </div>
-        <div class="account-exit">
+        <div class="account-exit drop-icons">
             <a href="<?php echo esc_url(wp_logout_url(get_permalink())); ?>"><i class="fa-solid fa-right-from-bracket"></i></a>
         </div>
     </div>
@@ -15,10 +15,10 @@
 ?>
     <div class="account">
         <div class="account-avatar">
-            Hello Guest
+           Guest
         </div>
-        <div class="account-exit">
-            <a href="<?php echo esc_url(wp_login_url()); ?>"><i class="fa-solid fa-right-to-bracket fa-xl"></i></a>
+        <div class="account-exit drop-icons">
+            <a href="<?php echo esc_url(wp_login_url()); ?>"><i class="fa-solid fa-right-to-bracket "></i></a>
         </div>
     </div>
 
