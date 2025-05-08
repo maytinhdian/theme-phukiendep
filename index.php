@@ -23,7 +23,11 @@ get_header();
 		the_post();
 	?>
 		<div class="post">
+<<<<<<< HEAD
 			<div class=" post-title">
+=======
+			<div class="post post-title">
+>>>>>>> 65a2eb3f48dcd34de54d17b41793c1e5eefa5506
 				<h2 class="post-title__heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<div class="post-title__meta">
 					<span class="post-title__meta--author">By <?php the_author(); ?></span>
@@ -40,7 +44,11 @@ get_header();
 						<?php the_excerpt(); ?>
 					</div>
 					<p class="post-content__read-more">
+<<<<<<< HEAD
 						<a href="<?php the_permalink(); ?>" class="">Read More >>></a>
+=======
+						<a href="<?php the_permalink(); ?>" class="">Read More</a>
+>>>>>>> 65a2eb3f48dcd34de54d17b41793c1e5eefa5506
 					</p>
 				</div>
 			</div>

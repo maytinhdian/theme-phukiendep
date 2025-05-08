@@ -27,8 +27,8 @@
                 <?php the_excerpt(); ?>
             </div>
             <div class="post-content__read-more">
-                <a href="<?php the_permalink(); ?>" class="">Read More >>></a>
-            </div>
+                <a href="<?php the_permalink(); ?>" class="btnStack">Read More</a>
+
         </div>
     </div>
 </div>
