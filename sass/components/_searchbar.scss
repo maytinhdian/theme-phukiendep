@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "sass:color";
+@use "../abstracts/" as *;
+
+.search {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  background-color: color.adjust(
+    map.get($theme-color-light, "background-color"),
+    $lightness: 50%
+  );
+  padding-block: 8px;
+  border-radius: 20px;
+  align-items: center;
+  i {
+    color: map.get($theme-color-light, "border-color");
+    font-size: 2rem;
+    margin-left: 15px;
+    padding-right: 1rem;
+  }
+  & input {
+    width: 90%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: map.get($theme-color-light, "text-color-white");
+    font-size: 2rem;
+  }
+  & input::placeholder {
+    color: map.get($theme-color-light, "text-color-white");
+    font-size: 2rem;
+  }
+}

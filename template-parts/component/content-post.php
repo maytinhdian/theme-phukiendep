@@ -10,8 +10,8 @@
 
 ?>
 <div class="post">
-    <div class="post-title">
-        <h2 class="post-title__heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <div class="post post-title">
+        <h2 class="post-title__heading"><a href="<?php the_permalink(); ?>">test<?php the_title(); ?></a></h2>
         <div class="post-title__meta">
             <span class="post-title__meta--author">By <?php the_author(); ?></span>
             <span class="post-title__meta--date"><?php echo get_the_date(); ?></span>
@@ -27,8 +27,8 @@
                 <?php the_excerpt(); ?>
             </div>
             <div class="post-content__read-more">
-                <a href="<?php the_permalink(); ?>" class="btnStack">Read More</a>
-
+                <a href="<?php the_permalink(); ?>" class="">Read More >>></a>
+            </div>
         </div>
     </div>
 </div>
