@@ -4,6 +4,7 @@
 
 .post-section {
   display: flex;
+  height: 100%;
   padding: 1rem;
   gap: 1rem;
   border-radius: 7px;
@@ -23,7 +24,16 @@
     $lightness: 40%
   );
   border-radius: 7px;
+  &-title {
+    display: flex;
+    align-items: center;
+    &__meta{
+      width: 25%;
+      text-align: right;
+    }
+  }
   &-title__heading {
+    width: 100%;
     background-color: color.adjust(
       map.get($theme-color-light, "background-color"),
       $lightness: 50%
@@ -31,6 +41,19 @@
     border-radius: 5px;
     a {
       margin-left: 2rem;
+    }
+  }
+  &-content {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5rem;
+    &__img {
+      margin: 0.5rem;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+    &__text {
+      width: 60%;
     }
   }
 }
