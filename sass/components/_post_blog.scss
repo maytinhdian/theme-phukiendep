@@ -1,29 +1,36 @@
+@use "sass:map";
+@use "sass:color";
+@use "../abstracts/" as *;
+
+.post-section {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 7px;
+  background-color: color.adjust(
+    map.get($theme-color-light, "background-color"),
+    $lightness: 90%
+  );
+  flex-direction: column;
+}
 .post {
   width: 100%;
-}
-.post-title {
   display: flex;
-  flex-flow: row wrap;
-  &__heading {
-    width: 100%;
-    h2 {
-      font-family: "Coiny";
-      letter-spacing: 2px;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: color.adjust(
+    map.get($theme-color-light, "background-color"),
+    $lightness: 40%
+  );
+  border-radius: 7px;
+  &-title__heading {
+    background-color: color.adjust(
+      map.get($theme-color-light, "background-color"),
+      $lightness: 50%
+    );
+    border-radius: 5px;
+    a {
+      margin-left: 2rem;
     }
-  }
-  &__meta {
-    & span {
-      padding-inline: 0.5rem;
-    }
-  }
-}
-.post-content {
-  display: flex;
-  flex-flow: row wrap;
-  &__img {
-    width: 20%;
-  }
-  &__text {
-    width: 80%;
   }
 }
