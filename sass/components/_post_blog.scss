@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-@use "sass:map";
-@use "sass:color";
-@use "../abstracts/" as *;
-
 .post {
   width: 100%;
-  background-color: color.adjust(map.get($theme-color-light,"background-color"),$lightness:40%);
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 2rem;
-  padding-block: rem;
-=======
-.post {
-  width: 100%;
->>>>>>> 65a2eb3f48dcd34de54d17b41793c1e5eefa5506
 }
 .post-title {
   display: flex;
@@ -26,11 +12,6 @@
     }
   }
   &__meta {
-<<<<<<< HEAD
-    margin-bottom: 0.7rem;
-    margin-left: 1rem;
-=======
->>>>>>> 65a2eb3f48dcd34de54d17b41793c1e5eefa5506
     & span {
       padding-inline: 0.5rem;
     }
@@ -41,19 +22,8 @@
   flex-flow: row wrap;
   &__img {
     width: 20%;
-<<<<<<< HEAD
-    height: auto;
-=======
->>>>>>> 65a2eb3f48dcd34de54d17b41793c1e5eefa5506
   }
   &__text {
     width: 80%;
   }
-<<<<<<< HEAD
-  &__read-more {
-    width: 100%;
-    text-align: right;
-  }
-=======
->>>>>>> 65a2eb3f48dcd34de54d17b41793c1e5eefa5506
 }
