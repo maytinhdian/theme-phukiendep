@@ -18,10 +18,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 1rem;
   background-color: color.adjust(
     map.get($theme-color-light, "background-color"),
-    $lightness: 40%
+    $lightness: 15%
   );
   border-radius: 7px;
   &-title {

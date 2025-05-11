@@ -1,18 +1,26 @@
-
 /**
  * Basic typography style for copy text
  */
 
-@use '../abstracts';
+@use "../abstracts";
 @use "sass:map";
+@use "sass:color";
+
 body {
-  color: map.get(abstracts.$theme-color-light,"text-color-white");
+  color: map.get(abstracts.$theme-color-light, "text-color-white");
   font: normal 125% / 1.4 abstracts.$text-font-stack;
-  background-color: map.get(abstracts.$theme-color-light,"background-color");
-  
+  background-color: color.adjust(
+    map.get(abstracts.$theme-color-light, "background-color"),
+    $lightness: 20%
+  );
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: abstracts.$text-font-stack;
   font-weight: bold;
   // line-height: 1.2;

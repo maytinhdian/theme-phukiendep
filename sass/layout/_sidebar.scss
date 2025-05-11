@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "sass:color";
+@use "../abstracts" as *;
+.widget-area {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 7px;
+  background-color: color.adjust(
+    map.get($theme-color-light, "background-color"),
+    $lightness: 90%
+  );
+
+  color: map.get($theme-color-light, "primary-color");
+}
+.widget_block {
+  background-color: color.adjust(
+    map.get($theme-color-light, "background-color"),
+    $lightness: 15%
+  );
+  padding: 1rem;
+  border-radius: 7px;
+}
