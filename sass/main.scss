@@ -1,35 +1,35 @@
 @charset "UTF-8";
 
 // 1. Vendors
-@use 'vendors/normalize';
+@use "vendors/normalize";
 
 // 2. Base stuff
-@use 'base/base';
-@use 'base/fonts';
-@use 'base/helpers';
-@use 'base/typography';
+@use "base/base";
+@use "base/fonts";
+@use "base/helpers";
+@use "base/typography";
 
 // 3. Layout-related sections
-@use 'layout/footer';
-@use 'layout/header';
-@use 'layout/sidebar';
-@use 'layout/grid';
+@use "layout/footer";
+@use "layout/header";
+@use "layout/sidebar";
+@use "layout/grid";
 
 // 4. Components
-@use 'components/button';
-@use 'components/navbar';
+@use "components/button";
+@use "components/navbar";
 
 // 5. Pages
-@use 'pages/home';
-@use 'pages/blog';
-@use 'pages/product-list';
+@use "pages/home";
+@use "pages/blog";
+@use "pages/product-list";
+@use "pages/archive-product";
 
 // 6. Themes
-@use 'themes/default';
-
+@use "themes/default";
 
 // 7. Vendors
-@use 'vendors/fontawesome/fontawesome.scss';
-@use 'vendors/fontawesome/solid.scss';
-@use 'vendors/fontawesome/brands.scss';
-@use 'vendors/fontawesome/regular.scss';
+@use "vendors/fontawesome/fontawesome.scss";
+@use "vendors/fontawesome/solid.scss";
+@use "vendors/fontawesome/brands.scss";
+@use "vendors/fontawesome/regular.scss";

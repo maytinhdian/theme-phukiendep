@@ -18,7 +18,7 @@
 
 defined('ABSPATH') || exit;
 
-get_header('shop');
+get_header();
 
 /**
  * Hook: woocommerce_before_main_content.
@@ -48,7 +48,6 @@ if (woocommerce_product_loop()) {
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
 	do_action('woocommerce_before_shop_loop');
-	echo 'test test';
 	woocommerce_product_loop_start();
 
 	if (wc_get_loop_prop('total')) {
@@ -87,6 +86,8 @@ if (woocommerce_product_loop()) {
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action('woocommerce_after_main_content');
+
+
 
 /**
  * Hook: woocommerce_sidebar.
