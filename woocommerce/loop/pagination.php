@@ -28,6 +28,7 @@ if ( $total <= 1 ) {
 	return;
 }
 ?>
+<div class="product-main__pagination">
 <nav class="woocommerce-pagination" aria-label="<?php esc_attr_e( 'Product Pagination', 'woocommerce' ); ?>">
 	<?php
 	echo paginate_links(
@@ -49,3 +50,4 @@ if ( $total <= 1 ) {
 	);
 	?>
 </nav>
+</div>
