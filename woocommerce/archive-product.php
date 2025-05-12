@@ -47,7 +47,25 @@ if (woocommerce_product_loop()) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
+
+
+	// if (! function_exists('additional_markup_before_products')) {
+	// 	/**
+	// 	 * Adding additional markup before product list
+	// 	 */
+	// 	function additional_markup_before_products()
+	// 	{
+	// 		echo '<div class="my-custom-class"><h1>' . esc_html__('Custom Title Before Products') . '</h1>';
+	// 	}
+	// 	add_action('woocommerce_before_shop_loop', 'additional_markup_before_products', 40);
+	// }
+
 	do_action('woocommerce_before_shop_loop');
+
+
+
+
+
 	woocommerce_product_loop_start();
 
 	if (wc_get_loop_prop('total')) {
@@ -70,7 +88,20 @@ if (woocommerce_product_loop()) {
 	 *
 	 * @hooked woocommerce_pagination - 10
 	 */
+
+
 	do_action('woocommerce_after_shop_loop');
+
+	// if (! function_exists('additional_markup_after_products')) {
+	// 	/**
+	// 	 * Adding additional markup after product list
+	// 	 */
+	// 	function additional_markup_after_products()
+	// 	{
+	// 		echo '</div>';
+	// 	}
+	// 	add_action('woocommerce_after_shop_loop', 'additional_markup_after_products', 5);
+	// }
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.

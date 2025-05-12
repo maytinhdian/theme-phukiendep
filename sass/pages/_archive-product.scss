@@ -5,44 +5,38 @@
 .product-main {
   display: flex;
   flex-flow: row wrap;
-  background-color: color.adjust(
-    map.get($theme-color-light, "background-color"),
-    $lightness: 15%
-  ); /// Adjust color
-  border-radius: 0.7rem;
-  padding: 1rem;
-  gap: 2rem;
-  color: map.get($theme-color-light, "primary-color");
-  &__breadcrumb {
-    width: 30%;
-    background-color: antiquewhite;
+  align-items: center;
+  & nav {
+    width: 100%;
   }
-}
-
-.woocommerce-pagination {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  & ul {
-    display: inline-flex;
+  &__result-count {
+    width: 49%;
   }
-  & li {
-    list-style-type: none;
-    margin: 1rem;
-    padding: 1rem;
+  &__list {
+    padding: 0.5rem;
+    
   }
-}
-.woocommerce-products-header {
-  width: 10%;
-  background-color: aquamarine;
-}
-.product-main__result-count {
-  width: 20%;
+  &__list ul li {
+    & a > img {
+      padding: 1rem;
+      align-items: center;
+    }
+    background-color: red;
+    text-align: center;
+  }
 }
 .product-main__order-by {
+  width: 49%;
+  background-color: yellowgreen;
   text-align: right;
-  width: 30%;
 }
-.products {
-  width: 100%;
+.woocommerce-pagination {
+  display: flex;
+  justify-content: center;
+  & ul,
+  li {
+    display: flex;
+    padding: 1rem;
+    text-align: center;
+  }
 }

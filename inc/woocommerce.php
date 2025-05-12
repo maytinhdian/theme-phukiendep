@@ -110,29 +110,28 @@ add_filter('woocommerce_output_related_products_args', 'phukiendep_woocommerce_r
 /**
  * Remove default WooCommerce wrapper.
  */
-remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+// remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+// remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
 add_action('woocommerce_before_main_content', 'phukiendep_woocommerce_wrapper_before');
 
-	if (! function_exists('phukiendep_woocommerce_wrapper_before')) {
-		/**
-		 * Before Content.
-		 *
-		 * Wraps all WooCommerce content in wrappers which match the theme markup.
-		 *
-		 * @return void
-		 */
-		function phukiendep_woocommerce_wrapper_before()
-		{
-	?>
-			<main id="primary" class="site-main">
-				<div class="product-main">
-				<?php
-			}
+if (! function_exists('phukiendep_woocommerce_wrapper_before')) {
+	/**
+	 * Before Content.
+	 *
+	 * Wraps all WooCommerce content in wrappers which match the theme markup.
+	 *
+	 * @return void
+	 */
+	function phukiendep_woocommerce_wrapper_before()
+	{
+?>
+			<div class="product-main">
+			<?php
 		}
+	}
 
-add_action('woocommerce_after_main_content', 'phukiendep_woocommerce_wrapper_after');
+	add_action('woocommerce_after_main_content', 'phukiendep_woocommerce_wrapper_after');
 
 	if (! function_exists('phukiendep_woocommerce_wrapper_after')) {
 		/**
@@ -146,7 +145,6 @@ add_action('woocommerce_after_main_content', 'phukiendep_woocommerce_wrapper_aft
 		{
 			?>
 			</div><!--product-main-->
-		</main><!-- #main -->
 	<?php
 		}
 	}

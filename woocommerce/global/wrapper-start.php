@@ -20,8 +20,4 @@ if (! defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
-echo '<div class="main-bg no-top-banner">
-			<div class="container">
-				<div id="content" class="row" >
-					<div id="main" class="col-md-9 pull-right clearfix" >';
-
+echo '<main id="primary" class="site-main">';
