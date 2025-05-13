@@ -195,3 +195,12 @@ function ts_woocommerce_breadcrumbs_change() {
             'home'        => _x( 'PhuKienDep', 'breadcrumb', 'woocommerce' ),
         );
 }
+
+function show_rating( $rating_html, $rating, $count ) {
+    $rating_html  = '<div class="star-rating">';
+    $rating_html .= wc_get_star_rating_html( $rating, $count );
+    $rating_html .= '</div>';
+
+    return $rating_html;
+};  
+add_filter( 'woocommerce_product_get_rating_html', 'show_rating', 100, 3 );
