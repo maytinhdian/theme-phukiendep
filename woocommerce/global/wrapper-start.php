@@ -20,4 +20,4 @@ if (! defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
-echo '<main id="primary" class="site-main">';
+echo '<main id="main__product" class="site-main__product"><!- Start #site-main__product----wrapper-start.php----->';

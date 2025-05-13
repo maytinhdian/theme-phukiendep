@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="product-main__container">
+<div class="product-main__container"> <!-----Start #product-main__container loop-start.php------->
 	<ul class="product-main__container--list columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
 
 

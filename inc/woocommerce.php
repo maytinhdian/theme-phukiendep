@@ -22,7 +22,7 @@ function phukiendep_woocommerce_setup()
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 150,
+			'thumbnail_image_width' => 250,
 			'single_image_width'    => 300,
 			'product_grid'          => array(
 				'default_rows'    => 3,
@@ -126,7 +126,8 @@ if (! function_exists('phukiendep_woocommerce_wrapper_before')) {
 	function phukiendep_woocommerce_wrapper_before()
 	{
 ?>
-		<div class="product-main">
+		<div id="product-main" class="product-main">
+			<!-- Start #product-main file:woocommerce.php-->
 		<?php
 	}
 }
@@ -144,7 +145,7 @@ if (! function_exists('phukiendep_woocommerce_wrapper_after')) {
 	function phukiendep_woocommerce_wrapper_after()
 	{
 		?>
-		</div><!--product-main-->
+		</div><!--End #product-main file:woocommerce.php-->
 <?php
 	}
 }
@@ -161,13 +162,36 @@ add_filter('woocommerce_show_page_title', '__return_false');
 // 	10
 // );
 
+
+
+/***
+ * Add div tag before img in product item loop
+ */
 add_action('woocommerce_before_shop_loop_item', 'test_function', 12);
 function test_function()
 {
 	echo '<div class="product_img">';
 };
+
+/***
+ * Add div tag after img in product item loop
+ */
 add_action('woocommerce_shop_loop_item_title', 'woocommerce_loop_product_title', 8);
 function woocommerce_loop_product_title()
 {
 	echo '</div>';
 };
+/****
+ * Add <div> tag before <nav> tag at breadcrumb
+ */
+add_filter( 'woocommerce_breadcrumb_defaults', 'ts_woocommerce_breadcrumbs_change',18 );
+function ts_woocommerce_breadcrumbs_change() {
+    return array(
+            'delimiter'   => '>',
+            'wrap_before' => '<div class="product-main__breadcrumb"><!---Start #product_breadcrumb woocommerce.php----><nav class="woocommerce-breadcrumb" itemprop="breadcrumb" style="margin-left:5%">',
+            'wrap_after'  => '</nav></div><!---End #product_breadcrumb woocommerce.php---->',
+            'before'      => '',
+            'after'       => '',
+            'home'        => _x( 'PhuKienDep', 'breadcrumb', 'woocommerce' ),
+        );
+}

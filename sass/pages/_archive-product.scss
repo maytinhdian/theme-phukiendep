@@ -2,65 +2,67 @@
 @use "sass:color";
 @use "../abstracts" as *;
 
+.site-main__product {
+  grid-area: 2/1/-1/4;
+  align-items: center;
+}
+
 .product-main {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
   &__breadcrumb {
     width: 100%;
-    // background-color: beige;
   }
-  &__result-count {
-    width: 50%;
-  }
-  &__container {
-    width: 100%;
-    // display: flex;
-    // flex-flow: row wrap;
-    &--list {
-      display: flex;
-      flex-flow: row wrap;
-      list-style-type: none;
-      gap: 1rem;
-      & li {
-        width: 20%;
-        text-align: center;
-      }
-    }
-  }
-  &__product-item {
+}
+.woocommerce-products-header {
+  width: 50%;
+  height: 30px;
+}
+.woocommerce-notices-wrapper {
+  width: 100%;
+}
+.product-main__result-count {
+  width: 50%;
+}
+.product-main__order-by {
+  width: 50%;
+}
+.product-main__container {
+  width: 100%;
+  ul {
+    margin: 0 auto;
     display: flex;
-    flex-flow: column wrap;
-    background-color: rgb(104, 104, 136);
-    margin: 1rem;
-    padding: 0.5rem;
-    height: 300px;
-    border-radius: 7px;
-    img{
+    flex-flow: row wrap;
+    list-style-type: none;
+    gap: 4rem;
+    li {
+      min-width: 30rem;
+      min-height: 40rem;
+      background-color: color.adjust(
+        map.get($theme-color-light, "primary-color"),
+        $lightness: 5%
+      );
+      padding: 0.1rem;
       border-radius: 7px;
-      // max-width: 150px;
-      // height: auto;
-      // object-fit: cover;
-    }
-    span{
-      color: black;
     }
   }
-  &__pagination {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    & ul {
-      width: 100%;
-      display: flex;
-      flex-flow: row wrap;
-      gap: 1rem;
-      list-style-type: none;
-    }
-  }
-  &__order-by {
-    width: 50%;
-    // background-color: yellowgreen;
-    text-align: right;
+}
+.product-main__pagination {
+  width: 100%;
+}
+.product-main__product-item {
+  display: flex ;
+  flex-flow: column wrap;
+  min-height: 40rem;
+  border-radius: 7px;
+  background-color: color.adjust(
+    map.get($theme-color-light, "background-color"),
+    $lightness: 40%
+  );
+  margin: 0 auto;
+  text-align: center;
+  img {
+    margin-top: 2rem;
+    border-radius: 5%;
   }
 }

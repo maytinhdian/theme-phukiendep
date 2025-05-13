@@ -48,7 +48,7 @@ switch ($template) {
 		echo '</main></div>';
 		break;
 	case 'phukiendep':
-		echo '</main><!----- Exit main container------>';
+		echo '</main<!-End #site-main__product-------- wrapper-end.php------>';
 		break;
 	default:
 		echo '</main></div>';

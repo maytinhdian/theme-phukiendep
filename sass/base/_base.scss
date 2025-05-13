@@ -26,10 +26,10 @@ html {
 
 a {
   text-decoration: none;
-  color: map.get($theme-color-light,'secondary-color');
+  color: map.get($theme-color-light,'primary-color');
   transition: all 0.5s ease-in-out;
   &:hover {
-    color: map.get($theme-color-light, 'primary-color');
+    color: map.get($theme-color-light, 'accent-color');
   }
 }
 
