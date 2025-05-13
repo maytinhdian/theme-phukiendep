@@ -24,6 +24,7 @@ global $product;
 if (! is_a($product, WC_Product::class) || ! $product->is_visible()) {
 	return;
 }
+
 ?>
 <li <?php wc_product_class('', $product); ?>>
 	<div <?php wc_product_class('product-main__product-item', $product); ?>>
@@ -33,6 +34,7 @@ if (! is_a($product, WC_Product::class) || ! $product->is_visible()) {
 		 *
 		 * @hooked woocommerce_template_loop_product_link_open - 10
 		 */
+	
 
 		do_action('woocommerce_before_shop_loop_item');
 

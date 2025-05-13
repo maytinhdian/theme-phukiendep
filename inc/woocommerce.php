@@ -126,31 +126,48 @@ if (! function_exists('phukiendep_woocommerce_wrapper_before')) {
 	function phukiendep_woocommerce_wrapper_before()
 	{
 ?>
-			<div class="product-main">
-			<?php
-		}
+		<div class="product-main">
+		<?php
 	}
+}
 
-	add_action('woocommerce_after_main_content', 'phukiendep_woocommerce_wrapper_after');
+add_action('woocommerce_after_main_content', 'phukiendep_woocommerce_wrapper_after');
 
-	if (! function_exists('phukiendep_woocommerce_wrapper_after')) {
-		/**
-		 * After Content.
-		 *
-		 * Closes the wrapping divs.
-		 *
-		 * @return void
-		 */
-		function phukiendep_woocommerce_wrapper_after()
-		{
-			?>
-			</div><!--product-main-->
-	<?php
-		}
-	}
-
-	
+if (! function_exists('phukiendep_woocommerce_wrapper_after')) {
 	/**
-	 * Remove shop title 
+	 * After Content.
+	 *
+	 * Closes the wrapping divs.
+	 *
+	 * @return void
 	 */
-	add_filter('woocommerce_show_page_title', '__return_false');
+	function phukiendep_woocommerce_wrapper_after()
+	{
+		?>
+		</div><!--product-main-->
+<?php
+	}
+}
+
+
+/**
+ * Remove shop title 
+ */
+add_filter('woocommerce_show_page_title', '__return_false');
+
+// remove_action(
+// 	'woocommerce_before_shop_loop_item',
+// 	'woocommerce_template_loop_product_link_open',
+// 	10
+// );
+
+add_action('woocommerce_before_shop_loop_item', 'test_function', 12);
+function test_function()
+{
+	echo '<div class="product_img">';
+};
+add_action('woocommerce_shop_loop_item_title', 'woocommerce_loop_product_title', 8);
+function woocommerce_loop_product_title()
+{
+	echo '</div>';
+};
