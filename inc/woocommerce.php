@@ -239,3 +239,6 @@ function pkd_woocommerce_after_main_content()
 {
 	echo '</div><!-- Exit: div#product-content --></main><!-- Exit: #product-main -->';
 }
+add_action('woocommerce_before_shop_loop_item', function() {
+    echo '<span style="color: orange; font-size: 22px; margin-right: 4px;">🔥</span>';
+});
