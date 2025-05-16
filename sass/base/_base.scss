@@ -24,16 +24,166 @@ html {
   box-sizing: inherit;
 }
 
+// 1. Khai báo biến màu theme
+$theme-color-light: (
+  "primary-color": rgb(255, 189, 57), // #fde047, #FDD200
+  "secondary-color": #00deff,
+  "accent-color": #ff46b1,
+  "text-color-white": #eeeaec,
+  "text-color-black": #000000,
+  "background-color": #000000,
+  "border-color": #cca800,
+  "link-color": #ff7ec8,
+) !default;
+
+// Helper function để lấy màu từ map
+@function theme-color($key) {
+  @return map.get($theme-color-light, $key);
+}
+
+// 2. Reset & Box-sizing
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// 3. Body & Typography
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: theme-color("background-color");
+  color: theme-color("text-color-white");
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  color: theme-color("primary-color");
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+
+p {
+  margin-bottom: 1em;
+  color: theme-color("text-color-white");
+}
+
 a {
+  color: theme-color("link-color");
   text-decoration: none;
-  color: map.get($theme-color-light,'secondary-color');
-  transition: all 0.5s ease-in-out;
-  &:hover {
-    color: map.get($theme-color-light, 'primary-color');
+  transition: color 0.2s;
+  &:hover, &:focus {
+    color: theme-color("accent-color");
+    text-decoration: underline;
   }
 }
 
-.link{
-  display: inline-block;
-  padding: 1rem;
+ul, ol {
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.5em;
+  color: theme-color("text-color-white");
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background: theme-color("primary-color");
+  color: theme-color("text-color-black");
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  transition: background 0.2s;
+  &:hover {
+    background: theme-color("accent-color");
+    color: theme-color("text-color-white");
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  color: theme-color("text-color-white");
+}
+
+th, td {
+  padding: 0.75em;
+  text-align: left;
+  border-bottom: 1px solid theme-color("border-color");
+}
+
+th {
+  background: theme-color("secondary-color");
+  color: theme-color("text-color-black");
+}
+
+hr {
+  border: none;
+  border-top: 1px solid theme-color("border-color");
+  margin: 2em 0;
+}
+
+pre, code {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  background: theme-color("secondary-color");
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: theme-color("text-color-black");
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: theme-color("primary-color");
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  border: 1px solid theme-color("border-color");
+  border-radius: 4px;
+  padding: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  background: theme-color("background-color");
+  color: theme-color("text-color-white");
+  &:focus {
+    border-color: theme-color("accent-color");
+  }
 }

@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "sass:color";
+@use "../abstracts/" as *;
+
+main#product-main {
+  grid-area: 2/1/4/4;
+}
+.product-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: color.adjust(
+    map.get($theme-color-light, "background-color"),
+    $lightness: 30%
+  );
+  border-radius: 7px;
+}
+.product-main {
+  &__header {
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__pagination {
+    width: 100%;
+  }
+  &__breadcrumb {
+    width: 100%;
+  }
+  &__result {
+    width: 100%;
+  }
+  &__ordering {
+    width: 100%;
+  }
+  &__wrapper {
+    width: 100%;
+    // margin: 1rem;
+
+    & ul {
+      display: flex;
+      flex-flow: row wrap;
+      list-style-type: none;
+      justify-content: space-evenly;
+    }
+    & li {
+      margin: 1rem;
+      padding: 1rem;
+      width: 22%;
+      border: 1px solid red;
+    }
+  }
+}
+.my-products-wrapper {
+  width: 100%;
+}
+.woocommerce-notices-wrapper {
+  width: 100%;
+}

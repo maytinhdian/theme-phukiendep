@@ -2,20 +2,21 @@
 
 /**
  * WooCommerce Compatibility File
- *
+ * 
  * @link https://woocommerce.com/
- *
  * @package phukiendep
  */
 
+/*--------------------------------------------------------------
+# WooCommerce Theme Support Setup
+--------------------------------------------------------------*/
+
 /**
- * WooCommerce setup function.
- *
+ * Thiết lập hỗ trợ WooCommerce cho theme.
+ * 
  * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
  * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)
  * @link https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
- *
- * @return void
  */
 add_action('after_setup_theme', 'phukiendep_woocommerce_setup');
 function phukiendep_woocommerce_setup()
@@ -39,10 +40,12 @@ function phukiendep_woocommerce_setup()
 	add_theme_support('wc-product-gallery-slider');
 }
 
+/*--------------------------------------------------------------
+# Enqueue WooCommerce Styles & Fonts
+--------------------------------------------------------------*/
+
 /**
- * WooCommerce specific scripts & stylesheets.
- *
- * @return void
+ * Thêm các stylesheet và font dành riêng cho WooCommerce.
  */
 add_action('wp_enqueue_scripts', 'phukiendep_woocommerce_scripts');
 function phukiendep_woocommerce_scripts()
@@ -51,48 +54,41 @@ function phukiendep_woocommerce_scripts()
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
-			font-family: "star";
-			src: url("' . $font_path . 'star.eot");
-			src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
-				url("' . $font_path . 'star.woff") format("woff"),
-				url("' . $font_path . 'star.ttf") format("truetype"),
-				url("' . $font_path . 'star.svg#star") format("svg");
-			font-weight: normal;
-			font-style: normal;
-		}';
+		font-family: "star";
+		src: url("' . $font_path . 'star.eot");
+		src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
+			url("' . $font_path . 'star.woff") format("woff"),
+			url("' . $font_path . 'star.ttf") format("truetype"),
+			url("' . $font_path . 'star.svg#star") format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}';
 
 	wp_add_inline_style('phukiendep-woocommerce-style', $inline_font);
 }
 
 /**
- * Disable the default WooCommerce stylesheet.
- *
- * Removing the default WooCommerce stylesheet and enqueing your own will
- * protect you during WooCommerce core updates.
- *
+ * Vô hiệu hóa stylesheet mặc định của WooCommerce.
  * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
  */
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
+/*--------------------------------------------------------------
+# Miscellaneous WooCommerce Customizations
+--------------------------------------------------------------*/
+
 /**
- * Add 'woocommerce-active' class to the body tag.
- *
- * @param  array $classes CSS classes applied to the body tag.
- * @return array $classes modified to include 'woocommerce-active' class.
+ * Thêm class 'woocommerce-active' vào thẻ body khi WooCommerce được active.
  */
 add_filter('body_class', 'phukiendep_woocommerce_active_body_class');
 function phukiendep_woocommerce_active_body_class($classes)
 {
 	$classes[] = 'woocommerce-active';
-
 	return $classes;
 }
 
 /**
- * Related Products Args.
- *
- * @param array $args related products args.
- * @return array $args related products args.
+ * Tùy chỉnh các tham số cho sản phẩm liên quan (Related Products).
  */
 add_filter('woocommerce_output_related_products_args', 'phukiendep_woocommerce_related_products_args');
 function phukiendep_woocommerce_related_products_args($args)
@@ -101,56 +97,145 @@ function phukiendep_woocommerce_related_products_args($args)
 		'posts_per_page' => 3,
 		'columns'        => 3,
 	);
-
 	$args = wp_parse_args($defaults, $args);
-
 	return $args;
 }
 
+/*--------------------------------------------------------------
+# Custom WooCommerce Layout - Wrapper
+--------------------------------------------------------------*/
 
 /**
- * Add main open tag to hook: woocommerce_before_main_content  
+ * Xóa wrapper mặc định và breadcrumb mặc định của WooCommerce.
  */
-add_action('woocommerce_before_main_content', 'pkd_woocommerce_output_content_wrapper', 8);
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+
+/**
+ * Thêm custom wrapper trước nội dung chính của WooCommerce.
+ * 
+ * @hooked pkd_woocommerce_output_content_wrapper -10
+ */
+add_action('woocommerce_before_main_content', 'pkd_woocommerce_output_content_wrapper', 10);
 function pkd_woocommerce_output_content_wrapper()
 {
-	remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper');
-	
-	echo '<main id="product-main" class="product-main"> <!--Start #product-main-->';
-	echo '<div id="product-main__breadcrumb" class="product-main__breadcrumb"> <!--Start #product-main__breadcrumb-->';
-};
-
-add_action('woocommerce_before_main_content', 'pkd_woocommerce_remove_woocommerce_breadcrumb', 9);
-function pkd_woocommerce_remove_woocommerce_breadcrumb()
-{
-	remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb',20);
-	echo '<!--woocommerce_breadcrumb removed-->';
-};
-
-
-add_action('woocommerce_shop_loop_header', 'pkd_woocommerce_add_breadcrumb', 10);
-function pkd_woocommerce_add_breadcrumb()
-{
-	echo '<!--woocommerce_breadcrumb insert-->';
-	add_action('woocommerce_shop_loop_header', 'woocommerce_breadcrumb',20);
-};
-/**
- * Add div close tag to hook: woocommerce_breadcrumb  
- */
-add_action('woocommerce_before_main_content', 'pkd_woocommerce_breadcrumb_wrapper_end', 22);
-function pkd_woocommerce_breadcrumb_wrapper_end()
-{
-	echo '</div"> <!--End #product-main__breadcrumb-->';
+	echo '<!-- Start: main#product-main --><main id="product-main" class="site-main">';
+	echo '<!-- Start: div#product-content --><div id="product-content" class="product-content">';
 }
 
-
+/*--------------------------------------------------------------
+# Shop Loop Header Customizations
+--------------------------------------------------------------*/
 
 /**
- * Add main close tag to hook: woocommerce_after_main_content  
+ * Tùy chỉnh header và breadcrumb của shop loop.
  */
-add_action('woocommerce_after_main_content', 'pkd_woocommerce_output_content_wrapper_end', 8);
-function pkd_woocommerce_output_content_wrapper_end()
+add_action('woocommerce_shop_loop_header', function () {
+	echo '<div class="product-main product-main__header">';
+}, 8);
+
+add_action('woocommerce_shop_loop_header', function () {
+	echo '</div><!--Exit #product-main product-main__header--><div class="product-main product-main__breadcrumb">';
+}, 12);
+
+add_action('woocommerce_shop_loop_header', 'woocommerce_breadcrumb', 20);
+
+add_action('woocommerce_shop_loop_header', function () {
+	echo '</div><!--Exit #product-main__breadcrumb-->';
+}, 24);
+
+
+/*
+|--------------------------------------------------------------------------
+| Bọc woocommerce_result_count bằng <div class="product-main__result-count">
+| Sử dụng hook woocommerce_before_shop_loop, ưu tiên @hooked 19 và 21
+|--------------------------------------------------------------------------
+*/
+
+// Mở div trước woocommerce_result_count
+add_action('woocommerce_before_shop_loop', function () {
+	echo '<div class="product-main__result-count">';
+}, 19);
+
+// Đóng div sau woocommerce_result_count (kèm comment đóng)
+add_action('woocommerce_before_shop_loop', function () {
+	echo '</div><!--- product-main__result-count -->';
+}, 21);
+
+
+
+// Mở div .product-main__ordering trước catalog ordering
+add_action('woocommerce_before_shop_loop', function () {
+	echo '<div class="product-main__ordering">';
+}, 29);
+
+// Đóng div .product-main__ordering sau catalog ordering
+add_action('woocommerce_before_shop_loop', function () {
+	echo '</div><!--Exit #product-main__ordering-->';
+}, 31);
+
+/*--------------------------------------------------------------
+# Custom Product Loop Markup
+--------------------------------------------------------------*/
+
+/**
+ * Thay đổi HTML mở đầu của vòng lặp sản phẩm WooCommerce.
+ *
+ * Mục đích: Bọc danh sách sản phẩm trong một <div class="my-products-wrapper">
+ * để dễ dàng tùy chỉnh giao diện bằng CSS hoặc thêm hiệu ứng JS.
+ */
+add_filter('woocommerce_product_loop_start', function ($start) {
+	return '<div class="product-main__wrapper"><ul class="product-main__list">';
+});
+
+/**
+ * Thay đổi HTML kết thúc của vòng lặp sản phẩm WooCommerce.
+ *
+ * Mục đích: Đóng thẻ </ul> và thẻ bao ngoài <div class="my-products-wrapper">
+ * đã mở ở filter 'woocommerce_product_loop_start'.
+ */
+add_filter('woocommerce_product_loop_end', function ($end) {
+	return '</ul></div>';
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Thêm wrapper cho phân trang sản phẩm WooCommerce
+| Bọc woocommerce_pagination bằng <div class="product-main__pagination">
+| Tag đóng có ghi chú <!--- product-main__pagination -->
+|--------------------------------------------------------------------------
+*/
+
+// Mở div trước phân trang
+add_action('woocommerce_after_shop_loop', function () {
+	echo '<div class="product-main__pagination">';
+}, 9);
+
+// Đóng div sau phân trang, có kèm comment
+add_action('woocommerce_after_shop_loop', function () {
+	echo '</div><!--- product-main__pagination -->';
+}, 11);
+
+
+
+
+/*--------------------------------------------------------------
+# Custom After Main Content Wrapper
+--------------------------------------------------------------*/
+
+/**
+ * Xóa action mặc định sau main content của WooCommerce.
+ */
+remove_action('woocommerce_after_main_content', 'woocommerce_after_main_content', 10);
+
+/**
+ * Thêm custom wrapper sau main content.
+ * 
+ * @hooked pkd_woocommerce_after_main_content -8
+ */
+add_action('woocommerce_after_main_content', 'pkd_woocommerce_after_main_content', 8);
+function pkd_woocommerce_after_main_content()
 {
-	remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end');
-	echo '</div> <!--End #product-main-->';
-};
+	echo '</div><!-- Exit: div#product-content --></main><!-- Exit: #product-main -->';
+}
