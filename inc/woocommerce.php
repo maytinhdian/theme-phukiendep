@@ -106,5 +106,5 @@ function phukiendep_woocommerce_related_products_args($args)
  * Base on: template content-product.php 
  */
 
-require get_template_directory() . '/inc/woocommerce/archive-product-custom-hook.php';
-require get_template_directory() . '/inc/woocommerce/content-product-custom-hook.php';
+require get_template_directory() . '/inc/woocustom/archive-product-custom-hook.php';
+require get_template_directory() . '/inc/woocustom/content-product-custom-hook.php';
