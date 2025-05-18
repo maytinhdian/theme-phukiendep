@@ -2,185 +2,88 @@
 @use "sass:color";
 @use "../abstracts/" as *;
 
-main#product-main {
+#primary.content-area {
   grid-area: 2/1/4/4;
 }
-.product-content {
+.site-main {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  flex-direction: column;
   background-color: color.adjust(
     map.get($theme-color-light, "background-color"),
-    $lightness: 30%
+    $lightness: 10%
   );
-  border-radius: 7px;
-}
-.product-main {
-  &__header {
-    width: 100%;
-    margin: 0 auto;
-  }
-  &__pagination {
-    width: 100%;
-  }
-  &__breadcrumb {
-    width: 100%;
-  }
-  &__result {
-    width: 100%;
-  }
-  &__ordering {
-    width: 100%;
-  }
-  &__wrapper {
-    width: 100%;
-    // margin: 1rem;
-
-    & ul {
-      display: flex;
-      flex-flow: row wrap;
-      list-style-type: none;
-      justify-content: space-evenly;
-    }
-    & li {
-      margin: 1rem;
-      padding: 1rem;
-      width: 22%;
-      border: 1px solid red;
-    }
-  }
-}
-.my-products-wrapper {
-  width: 100%;
-}
-.woocommerce-notices-wrapper {
-  width: 100%;
-}
-
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-*
-{
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-body
-{
-    font-family: 'Roboto', sans-serif;
-}
-a
-{
-    text-decoration: none;
 }
 .product-card {
-    width: 380px;
-    position: relative;
-    box-shadow: 0 2px 7px #dfdfdf;
-    margin: 50px auto;
-    background: #fafafa;
+  position: relative;
+  // margin: 1rem;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-flow: row wrap;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  background-color: map.get($theme-color-light, "primary-color");
+  border-radius: 0.7rem;
+  justify-content: center;
+}
+
+// ul.products {
+//   width: 100%;
+// }
+// .product-price {
+//   width: 50%;
+//   color: black;
+//   font-size: larger;
+//   font-style: italic;
+//   margin-left: 1rem;
+// }
+// .product-cart {
+//   width: 100%;
+//   text-align: right;
+// }
+// .card-img {
+//   display: flex;
+//   justify-content: center;
+//   & img {
+//     border-radius: 7px;
+//   }
+// }
+.product-thumbnail {
+  // display: flex;
+  justify-content: center;
+  color: black;
+  & img {
+    margin-top: 1rem;
+  }
+  & h2 {
+    color: black;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+.product-pagination {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+.page-numbers {
+  display: flex;
+  list-style-type: none;
+  margin-left: 1.5rem;
 }
 
 .badge {
-    position: absolute;
-    left: 0;
-    top: 20px;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 700;
-    background: red;
-    color: #fff;
-    padding: 3px 10px;
+  // position: absolute;
+  font-size: large;
+  text-transform: uppercase;
+  font-family: "Coiny";
+  color: red;
+  translate: 1rem 2.5rem;
 }
 
-.product-tumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    padding: 50px;
-    background: #f0f0f0;
-}
-
-.product-tumb img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.product-details {
-    padding: 30px;
-}
-
-.product-catagory {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #ccc;
-    margin-bottom: 18px;
-}
-
-.product-details h4 a {
-    font-weight: 500;
-    display: block;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-    color: #363636;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.product-details h4 a:hover {
-    color: #fbb72c;
-}
-
-.product-details p {
-    font-size: 15px;
-    line-height: 22px;
-    margin-bottom: 18px;
-    color: #999;
-}
-
-.product-bottom-details {
-    overflow: hidden;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.product-bottom-details div {
-    float: left;
-    width: 50%;
-}
-
-.product-price {
-    font-size: 18px;
-    color: #fbb72c;
-    font-weight: 600;
-}
-
-.product-price small {
-    font-size: 80%;
-    font-weight: 400;
-    text-decoration: line-through;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.product-links {
-    text-align: right;
-}
-
-.product-links a {
-    display: inline-block;
-    margin-left: 5px;
-    color: #e1e1e1;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-.product-links a:hover {
-    color: #fbb72c;
-}
+// .woocommerce-loop-product__title {
+//   color: black;
+// }
