@@ -5,7 +5,7 @@
 @use "sass:color";
 /// Regular font family
 /// @type List
-$text-font-stack: "Roboto","Inter","Coiny", sans-serif !default;
+$text-font-stack: "Roboto", "Inter", "Coiny", sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
@@ -18,32 +18,31 @@ $fa-font-path: "../../assets/fonts/webfonts";
 /// @type Color
 
 $theme-color-light: (
-  "primary-color": rgb(255, 189, 57) ,//#fde047, #FDD200
-  "secondary-color":#00deff,
-  "accent-color":#ff46b1 ,
-  "text-color-white":#eeeaec ,
-  "text-color-black":#000000 ,
-  "background-color":#000000 ,
-  "border-color":#cca800 ,
-  "link-color":#ff7ec8 ,
+  "primary-color": #ffbd39,
+  "secondary-color": #2196f3,
+  "accent-color":#ff4081,
+  "text-color-white": #ffffff,
+  "text-color-black": #111111,
+  "background-color": #181818,
+  "border-color": #b48800,
+  "link-color": #1976d2,
 ) !default;
 
 $theme-color-dark: (
-  "primary-color": #ffd200,
-  "secondary-color":#00deff,
-  "accent-color":#ff46b1 ,
-  "text-color-white":#ffffff ,
-  "text-color-black":#000000 ,
-  "background-color":#353639 ,
-  "border-color":#cca800 ,
-  "link-color":#ff7ec8 ,
+  "primary-color": #ffbd39,      
+  "secondary-color": #29b6f6,    
+  "accent-color": #ff4081,       
+  "text-color-white": #ffffff,   
+  "text-color-black": #111111,   
+  "background-color": #181818,   
+  "surface-color": #23272f,      
+  "border-color": #444444,       
+  "link-color": #90caf9,         
 ) !default;
 
 ///Site container max width
 /// @type Number
 $max-width: 1200px !default;
-
-
 
 // @debug color.adjust(#ffd200, $lightness:10%); // #a1a5af
 /// Breakpoints map
@@ -78,48 +77,47 @@ $asset-url: "#{$site-url}wp-content/themes/#{$theme-name}/assets/" !default;
 
 $font-faces: (
   (
-    "family":"Roboto",
+    "family": "Roboto",
     "path": "#{$asset-url}fonts/roboto/Roboto-Regular.ttf",
-    "format":"truetype",
+    "format": "truetype",
     "weight": normal,
     "style": normal,
   ),
-   (
-    "family":"Roboto",
+  (
+    "family": "Roboto",
     "path": "#{$asset-url}fonts/roboto/Roboto-SemiBold.ttf",
-    "format":"truetype",
+    "format": "truetype",
     "weight": bold,
     "style": normal,
   ),
- (
-  "family":"Roboto",
+  (
+    "family": "Roboto",
     "path": "#{$asset-url}fonts/roboto/Roboto-BlackItalic.ttf",
-    "format":"truetype",
+    "format": "truetype",
     "weight": normal,
     "style": italic,
   ),
   (
-    "family":"Roboto",
+    "family": "Roboto",
     "path": "#{$asset-url}fonts/roboto/Roboto-Bold.ttf",
-    "format":"truetype",
+    "format": "truetype",
     "weight": bold,
     "style": normal,
   ),
   (
-    "family":"Roboto",
+    "family": "Roboto",
     "path": "#{$asset-url}fonts/roboto/Roboto-BoldItalic.ttf",
-    "format":"truetype",
+    "format": "truetype",
     "weight": bold,
     "style": italic,
   ),
   (
-    "family":"Coiny",
+    "family": "Coiny",
     "path": "#{$asset-url}fonts/coiny-regular.ttf",
-    "format":"truetype",
+    "format": "truetype",
     "weight": normal,
     "style": normal,
-  ),
-
+  )
 ) !default;
 
 // @each $font-face in $font-faces {

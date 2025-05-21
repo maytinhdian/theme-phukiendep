@@ -44,17 +44,21 @@
 //   width: 100%;
 //   text-align: right;
 // }
-// .card-img {
-//   display: flex;
-//   justify-content: center;
-//   & img {
-//     border-radius: 7px;
-//   }
-// }
+.card-img {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  top: -5rem;
+  & img {
+    border-radius: 7px;
+  }
+}
 .product-thumbnail {
   // display: flex;
+  position: relative;
   justify-content: center;
   color: black;
+  z-index: 2;
   & img {
     margin-top: 1rem;
   }
@@ -82,8 +86,27 @@
   font-family: "Coiny";
   color: red;
   translate: 1rem 2.5rem;
+  z-index: 3;
+  &:hover {
+    animation: shake 0.5s;
+  }
 }
 
 // .woocommerce-loop-product__title {
 //   color: black;
 // }
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}

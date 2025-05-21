@@ -46,6 +46,7 @@ function pkd_woocommerce_template_loop_product_link_open_wrapper_end()
      * @hooked woocommerce_template_loop_rating - 5
      * @hooked woocommerce_template_loop_price - 10
      */
+    remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
     add_action('woocommerce_after_shop_loop_item_title', 'pkd_woocommerce_after_shop_loop_item_title_wrapper', 9);
     function pkd_woocommerce_after_shop_loop_item_title_wrapper()
     {
@@ -54,6 +55,7 @@ function pkd_woocommerce_template_loop_product_link_open_wrapper_end()
     add_action('woocommerce_after_shop_loop_item_title', 'pkd_woocommerce_after_shop_loop_item_title_wrapper_end', 11);
     function pkd_woocommerce_after_shop_loop_item_title_wrapper_end()
     {
+
         echo '</div><!---End #product-price---->';
     }
 

@@ -33,7 +33,7 @@ function pkd_woocommerce_breadcrumb()
          */
         woocommerce_breadcrumb();
         ?>
-    </div><!--* End .product-breadcrumb *-->
+    </div><!--* End #product-breadcrumb *-->
     <!-- End Block: Breadcrumb Wrapper -->
 <?php
 }
