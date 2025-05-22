@@ -8,51 +8,15 @@
 .site-main {
   display: flex;
   flex-flow: row wrap;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  // margin-left: 0.5rem;
+  // margin-right: 0.5rem;
   flex-direction: column;
   background-color: color.adjust(
     map.get($theme-color-light, "background-color"),
     $lightness: 10%
   );
 }
-.product-card {
-  position: relative;
-  // margin: 1rem;
-  width: 300px;
-  height: 400px;
-  display: flex;
-  flex-flow: row wrap;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
-  background-color: map.get($theme-color-light, "primary-color");
-  border-radius: 0.7rem;
-  justify-content: center;
-}
-.card-img {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  top: -5rem;
-  & img {
-    border-radius: 7px;
-  }
-}
-.product-thumbnail {
-  // display: flex;
-  position: relative;
-  justify-content: center;
-  color: black;
-  z-index: 2;
-  & img {
-    margin-top: 1rem;
-  }
-  & h2 {
-    color: black;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
-}
+
 .product-pagination {
   display: flex;
   justify-content: center;
@@ -69,7 +33,8 @@ ul.products {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  // gap: 0.5rem;
+  column-gap: 2rem;
+  row-gap: 3rem;
   & li {
     display: flex;
     justify-content: center;

@@ -52,18 +52,11 @@
   }
 }
 
-/**
-Demo 
-**/
-body {
-  // background: #414852;
-  font-family: "Montserrat", sans-serif;
-}
 .single-card {
   position: relative;
-  width: 280px;
-  height: 400px;
-  margin: 15px;
+  flex-basis: 28rem;
+  height: 45rem;
+  margin: auto;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
   overflow: hidden;
@@ -137,7 +130,7 @@ body {
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: "Bebas Neue", sans-serif;
+    // font-family: "Bebas Neue", sans-serif;
   }
   & .price {
     margin: 0;
