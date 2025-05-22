@@ -1,102 +1,70 @@
-@use '../abstracts' as * ;
+/***
+ * Base SASS cho theme PKD
+ * - Import biến màu từ file riêng
+ * - Dùng function/mixin lấy màu theo theme
+ * - Hỗ trợ BEM, dark mode
+***/
+
+// Import variables
+@use "../abstracts/" as *;
 @use "sass:map";
-// -----------------------------------------------------------------------------
-// This file contains very basic styles.
-// -----------------------------------------------------------------------------
 
-/**
- * Set up a decent box model on the root element
- */
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
+// Mặc định dùng theme light từ file biến
+$pkd-theme: $theme-color-light !default;
+
+// Function lấy màu từ theme map
+@function pkd-color($key) {
+  @return map.get($pkd-theme, $key);
 }
 
-/**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+// Base variables
+$pkd-border-radius: 8px !default;
+$pkd-font-main: "Roboto", Arial, sans-serif !default;
+$pkd-breakpoint-md: 768px !default;
+$pkd-breakpoint-lg: 1200px !default;
 
-// 1. Khai báo biến màu theme
-$theme-color-light: (
-  "primary-color": rgb(255, 189, 57), // #fde047, #FDD200
-  "secondary-color": #00deff,
-  "accent-color": #ff46b1,
-  "text-color-white": #eeeaec,
-  "text-color-black": #000000,
-  "background-color": #000000,
-  "border-color": #cca800,
-  "link-color": #ff7ec8,
-) !default;
-
-// Helper function để lấy màu từ map
-@function theme-color($key) {
-  @return map.get($theme-color-light, $key);
-}
-
-// 2. Reset & Box-sizing
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-// 3. Body & Typography
-body {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  background: theme-color("background-color");
-  color: theme-color("text-color-white");
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 0.5em;
-  color: theme-color("primary-color");
-}
-
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: 0.875rem; }
-
-p {
-  margin-bottom: 1em;
-  color: theme-color("text-color-white");
-}
-
-a {
-  color: theme-color("link-color");
-  text-decoration: none;
-  transition: color 0.2s;
-  &:hover, &:focus {
-    color: theme-color("accent-color");
-    text-decoration: underline;
+// Responsive mixin
+@mixin pkd-responsive($breakpoint) {
+  @if $breakpoint == md {
+    @media (min-width: $pkd-breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $pkd-breakpoint-lg) {
+      @content;
+    }
   }
 }
 
-ul, ol {
-  padding-left: 2em;
-  margin-bottom: 1em;
+// Reset CSS
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-li {
-  margin-bottom: 0.5em;
-  color: theme-color("text-color-white");
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $pkd-font-main;
+  font-size: 1.6rem;
+  background: pkd-color("background-color");
+  color: pkd-color("text-color-white");
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+a {
+  color: pkd-color("link-color");
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover,
+  &:focus {
+    color: pkd-color("primary-color");
+  }
 }
 
 img {
@@ -105,85 +73,77 @@ img {
   display: block;
 }
 
-button,
-input,
-select,
-textarea {
-  font: inherit;
-  outline: none;
-}
-
-button {
+// BEM: Button block
+.pkd-btn {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  border-radius: $pkd-border-radius;
+  background: pkd-color("primary-color");
+  color: pkd-color("text-color-black");
+  border: none;
+  font-weight: 700;
   cursor: pointer;
-  background: theme-color("primary-color");
-  color: theme-color("text-color-black");
-  border: none;
-  border-radius: 4px;
-  padding: 0.5em 1em;
   transition: background 0.2s;
+  &--secondary {
+    background: pkd-color("secondary-color");
+    color: pkd-color("text-color-white");
+  }
+  &--outline {
+    background: transparent;
+    border: 2px solid pkd-color("primary-color");
+    color: pkd-color("primary-color");
+  }
   &:hover {
-    background: theme-color("accent-color");
-    color: theme-color("text-color-white");
+    background: pkd-color("accent-color");
+    color: pkd-color("text-color-white");
   }
 }
 
-table {
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-weight: 700;
+  color: pkd-color("primary-color");
+}
+
+// Utilities
+.pkd-mt-2 {
+  margin-top: 2rem;
+}
+.pkd-mb-2 {
+  margin-bottom: 2rem;
+}
+.pkd-text-center {
+  text-align: center;
+}
+.pkd-text-gray {
+  color: pkd-color("text-color-gray");
+}
+
+// Responsive container
+.pkd-container {
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1em;
-  color: theme-color("text-color-white");
-}
-
-th, td {
-  padding: 0.75em;
-  text-align: left;
-  border-bottom: 1px solid theme-color("border-color");
-}
-
-th {
-  background: theme-color("secondary-color");
-  color: theme-color("text-color-black");
-}
-
-hr {
-  border: none;
-  border-top: 1px solid theme-color("border-color");
-  margin: 2em 0;
-}
-
-pre, code {
-  font-family: 'Fira Mono', 'Consolas', monospace;
-  background: theme-color("secondary-color");
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  color: theme-color("text-color-black");
-}
-
-pre {
-  padding: 1em;
-  overflow-x: auto;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.5em;
-  font-weight: 600;
-  color: theme-color("primary-color");
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
-  border: 1px solid theme-color("border-color");
-  border-radius: 4px;
-  padding: 0.5em;
-  width: 100%;
-  box-sizing: border-box;
-  transition: border-color 0.2s;
-  background: theme-color("background-color");
-  color: theme-color("text-color-white");
-  &:focus {
-    border-color: theme-color("accent-color");
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  @include pkd-responsive(md) {
+    padding: 0 2rem;
   }
 }
+
+/***
+ * Hỗ trợ dark mode: override lại $pkd-theme trong selector
+ * Ví dụ:
+ * .pkd-dark {
+ *   $pkd-theme: $theme-color-dark !global;
+ *   // Re-include phần base/dark style ở đây
+ * }
+ */
+
+// End base.scss

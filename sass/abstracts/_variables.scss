@@ -26,18 +26,20 @@ $theme-color-light: (
   "background-color": #181818,
   "border-color": #b48800,
   "link-color": #1976d2,
+  "text-color-gray": #8a8a8a,
 ) !default;
 
 $theme-color-dark: (
-  "primary-color": #ffbd39,      
-  "secondary-color": #29b6f6,    
-  "accent-color": #ff4081,       
-  "text-color-white": #ffffff,   
-  "text-color-black": #111111,   
-  "background-color": #181818,   
-  "surface-color": #23272f,      
-  "border-color": #444444,       
-  "link-color": #90caf9,         
+  "primary-color": #fbc02d,      // Vàng gold, nổi bật trên nền tối
+  "secondary-color": #1de9b6,    // Xanh ngọc nhạt, bớt chói
+  "accent-color": #ff64b4,       // Hồng tím, tươi nhưng không gắt
+  "text-color-white": #f4f4f4,   // Gần trắng, tránh trắng gắt
+  "text-color-gray": #b0b0b8,    // Text phụ, subtitle, placeholder
+  "text-color-black": #181818,   // Đen cho text đặc biệt hoặc background phụ
+  "background-color": #13131a,   // Xám đen chủ đạo, nhẹ mắt hơn #000
+  "background-alt": #181820,     // Nền phụ, card, khối block
+  "border-color": #2a2a33,       // Xám viền, phân tách nội dung
+  "link-color": #ffa7de,         // Hồng pastel cho link
 ) !default;
 
 ///Site container max width
