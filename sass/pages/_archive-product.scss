@@ -2,19 +2,11 @@
 @use "sass:color";
 @use "../abstracts/" as *;
 
-#primary.content-area {
+.pkd-content__wrapper {
   grid-area: 2/1/4/4;
 }
-.site-main {
-  display: flex;
-  flex-flow: row wrap;
-  // margin-left: 0.5rem;
-  // margin-right: 0.5rem;
-  flex-direction: column;
-  background-color: color.adjust(
-    map.get($theme-color-light, "background-color"),
-    $lightness: 10%
-  );
+.pkd-container {
+  width: 100%;
 }
 
 .product-pagination {
@@ -29,6 +21,7 @@
 }
 
 ul.products {
+  padding-inline-start: 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -38,5 +31,28 @@ ul.products {
   & li {
     display: flex;
     justify-content: center;
+  }
+}
+
+.pkd-main-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  & nav.woocommerce-breadcrumb {
+    width: 100%;
+  }
+  & header {
+    width: 100%;
+  }
+  & div.woocommerce-notices-wrapper {
+    width: 100%;
+  }
+  & p.woocommerce-result-count {
+    width: 50%;
+  }
+  & form.woocommerce-ordering {
+    width: 50%;
+    text-align: right;
   }
 }

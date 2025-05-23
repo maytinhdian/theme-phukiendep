@@ -1,9 +1,3 @@
-/***
- * Base SASS cho theme PKD
- * - Import biến màu từ file riêng
- * - Dùng function/mixin lấy màu theo theme
- * - Hỗ trợ BEM, dark mode
-***/
 
 // Import variables
 @use "../abstracts/" as *;
@@ -126,16 +120,16 @@ h6 {
 }
 
 // Responsive container
-.pkd-container {
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1rem;
-  @include pkd-responsive(md) {
-    padding: 0 2rem;
-  }
-}
+// .pkd-container {
+//   width: 100%;
+//   max-width: 1200px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding: 0 1rem;
+//   @include pkd-responsive(md) {
+//     padding: 0 2rem;
+//   }
+// }
 
 /***
  * Hỗ trợ dark mode: override lại $pkd-theme trong selector
