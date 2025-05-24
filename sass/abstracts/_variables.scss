@@ -20,7 +20,7 @@ $fa-font-path: "../../assets/fonts/webfonts";
 $theme-color-light: (
   "primary-color": #ffbd39,
   "secondary-color": #2196f3,
-  "accent-color":#ff4081,
+  "accent-color": #ff4081,
   "text-color-white": #ffffff,
   "text-color-black": #111111,
   "background-color": #181818,
@@ -30,27 +30,28 @@ $theme-color-light: (
 ) !default;
 
 $theme-color-dark: (
-  "primary-color": #fbc02d,      // Vàng gold, nổi bật trên nền tối
-  "secondary-color": #1de9b6,    // Xanh ngọc nhạt, bớt chói
-  "accent-color": #ff64b4,       // Hồng tím, tươi nhưng không gắt
-  "text-color-white": #f4f4f4,   // Gần trắng, tránh trắng gắt
-  "text-color-gray": #b0b0b8,    // Text phụ, subtitle, placeholder
-  "text-color-black": #181818,   // Đen cho text đặc biệt hoặc background phụ
-  "background-color": #13131a,   // Xám đen chủ đạo, nhẹ mắt hơn #000
-  "background-alt": #181820,     // Nền phụ, card, khối block
-  "border-color": #2a2a33,       // Xám viền, phân tách nội dung
-  "link-color": #ffa7de,         // Hồng pastel cho link
+  "primary-color": #fbc02d,
+  "secondary-color": #1de9b6,
+  "accent-color": #ff64b4,
+  "text-color-white": #f4f4f4,
+  "text-color-gray": #b0b0b8,
+  "text-color-black": #181818,
+  "background-color": #13131a,
+  "background-alt": #181820,
+  "border-color": #2a2a33,
+  "link-color": #ffa7de,
 ) !default;
 
 ///Site container max width
 /// @type Number
-$max-width: 1200px !default;
+$max-width: 1400px !default;
 
 // @debug color.adjust(#ffd200, $lightness:10%); // #a1a5af
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoint: (
+  "mb": 320px,
   "sm": 576px,
   "md": 768px,
   "lg": 992px,

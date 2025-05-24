@@ -8,19 +8,19 @@
 //Breakpoint mixins
 // -----------------------------------------------------------------------------
 @mixin sm {
-  @media (max-width: map.get(variables.$breakpoint, "sm")) {
+  @media (min-width: map.get(variables.$breakpoint, "sm")) {
     @content;
   }
 }
 
 @mixin md {
-  @media (max-width: map.get(variables.$breakpoint, "md")) {
+  @media (min-width: map.get(variables.$breakpoint, "md")) {
     @content;
   }
 }
 
 @mixin lg {
-  @media (max-width: map.get(variables.$breakpoint, "lg")) {
+  @media (min-width: map.get(variables.$breakpoint, "lg")) {
     @content;
   }
 }
@@ -34,13 +34,6 @@
     @content;
   }
 }
-
-@mixin breakpoint($bp: 0) {
-  @media (max-width: $bp) {
-    @content;
-  }
-}
-
 
 //Font-face mixin
 // -----------------------------------------------------------------------------

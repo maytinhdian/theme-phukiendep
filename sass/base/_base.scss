@@ -14,21 +14,6 @@ $pkd-theme: $theme-color-light !default;
 // Base variables
 $pkd-border-radius: 8px !default;
 $pkd-font-main: "Roboto", Arial, sans-serif !default;
-$pkd-breakpoint-md: 768px !default;
-$pkd-breakpoint-lg: 1200px !default;
-
-// Responsive mixin
-@mixin pkd-responsive($breakpoint) {
-  @if $breakpoint == md {
-    @media (min-width: $pkd-breakpoint-md) {
-      @content;
-    }
-  } @else if $breakpoint == lg {
-    @media (min-width: $pkd-breakpoint-lg) {
-      @content;
-    }
-  }
-}
 
 // Reset CSS
 *,
@@ -118,26 +103,3 @@ h6 {
 .pkd-text-gray {
   color: pkd-color("text-color-gray");
 }
-
-// Responsive container
-// .pkd-container {
-//   width: 100%;
-//   max-width: 1200px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   padding: 0 1rem;
-//   @include pkd-responsive(md) {
-//     padding: 0 2rem;
-//   }
-// }
-
-/***
- * Hỗ trợ dark mode: override lại $pkd-theme trong selector
- * Ví dụ:
- * .pkd-dark {
- *   $pkd-theme: $theme-color-dark !global;
- *   // Re-include phần base/dark style ở đây
- * }
- */
-
-// End base.scss
