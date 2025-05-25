@@ -6,7 +6,10 @@
   padding-right: 1rem;
   text-transform: capitalize;
   font-size: 1.6rem;
-  gap: 0.5rem;
+  gap: 1rem;
+  &-avatar{
+    color: map.get($theme-color-light, "primary-color");
+  }
   & img {
     width: 30px;
     height: 30px;
@@ -14,11 +17,12 @@
   }
 }
 
-.account-exit,.drop-icons {
+.account-exit,
+.drop-icons {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: map.get($theme-color-light, "border-color");
+  // background-color: map.get($theme-color-light, "border-color");
   text-align: center;
   line-height: 30px;
 }
