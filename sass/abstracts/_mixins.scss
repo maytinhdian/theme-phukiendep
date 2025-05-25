@@ -25,12 +25,12 @@
   }
 }
 @mixin xl {
-  @media (max-width: map.get(variables.$breakpoint, "xl")) {
+  @media (min-width: map.get(variables.$breakpoint, "xl")) {
     @content;
   }
 }
 @mixin xxl {
-  @media (max-width: map.get(variables.$breakpoint, "xxl")) {
+  @media (min-width: map.get(variables.$breakpoint, "xxl")) {
     @content;
   }
 }
