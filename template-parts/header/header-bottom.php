@@ -14,3 +14,8 @@
     ?>
     </nav><!-- #site-navigation -->
 </div>
+<div class="mobile-bottom-wrapper">
+    <?php
+    get_template_part('template-parts/component/nav', 'mobile', array());
+    ?>
+</div>

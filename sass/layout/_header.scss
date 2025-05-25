@@ -18,13 +18,16 @@
 .header-top {
   grid-area: header-top;
   display: flex;
-  // @include components.nav-menu;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-between;
   column-gap: 1rem;
   &__cta {
+    width: 48%;
     & a .fa-solid {
       margin-right: 1rem;
     }
-    flex-grow: 1;
+    // flex-grow: 1;
 
     @include mb {
       text-align: left;
@@ -34,11 +37,15 @@
       text-align: center;
     }
   }
-  &__logon a {
-    // flex-grow: 1;
-    text-transform: lowercase;
+  &__logon {
+    width: 48%;
     text-align: right;
-    padding-left: 0.5rem;
+    & a {
+      flex-grow: 1;
+      text-transform: lowercase;
+      text-align: right;
+      // padding-left: 0.5rem;
+    }
   }
 }
 .header-main {

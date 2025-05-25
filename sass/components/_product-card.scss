@@ -54,8 +54,8 @@
 
 .single-card {
   position: relative;
-  flex-basis: 28rem;
-  height: 45rem;
+  flex-basis: 34rem;
+  min-height: 45rem;
   margin: auto;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
