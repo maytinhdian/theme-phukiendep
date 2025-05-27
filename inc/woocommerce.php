@@ -108,6 +108,23 @@ function phukiendep_woocommerce_related_products_args($args)
  * Load Content Product Hook Custom.
  * Base on: template content-product.php 
  */
+function debug_woocommerce_content_wrapper() {
+    if ( is_shop() ) {
+        error_log('woocommerce_output_content_wrapper được gọi ở: Shop');
+    } elseif ( is_product() ) {
+        error_log('woocommerce_output_content_wrapper được gọi ở: Single Product');
+    } elseif ( is_product_category() ) {
+        error_log('woocommerce_output_content_wrapper được gọi ở: Product Category');
+    } elseif ( is_cart() ) {
+        error_log('woocommerce_output_content_wrapper được gọi ở: Cart');
+    } elseif ( is_checkout() ) {
+        error_log('woocommerce_output_content_wrapper được gọi ở: Checkout');
+    } else {
+        error_log('woocommerce_output_content_wrapper được gọi ở: Trang khác');
+    }
+}
+add_action('woocommerce_before_main_content', 'debug_woocommerce_content_wrapper', 9); // Ưu tiên nhỏ hơn 10 để chạy trước function gốc
 
-require get_template_directory() . '/inc/woocustom/archive-product-custom-hook.php';
-require get_template_directory() . '/inc/woocustom/content-product-custom-hook.php';
+
+require get_template_directory() . '/inc/woocommerce-custom/archive-product-custom-hook.php';
+require get_template_directory() . '/inc/woocommerce-custom/content-product-custom-hook.php';

@@ -1,7 +1,5 @@
 <div class="header-bottom responsive-test>
-
     <nav id=" site-navigation class="header-bottom__main-navigation">
-    <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'phukiendep'); ?></button> -->
     <?php
     wp_nav_menu(
         array(
@@ -11,11 +9,22 @@
             'container_class' => 'header-bottom__main-menu',
         )
     );
+
     ?>
     </nav><!-- #site-navigation -->
 </div>
 <div class="mobile-bottom-wrapper">
     <?php
-    get_template_part('template-parts/component/nav', 'mobile', array());
+    // get_template_part('template-parts/component/nav', 'mobile', array());
+    wp_nav_menu(
+        array(
+            'theme_location' => 'mobile-menu',
+            'menu_id'        => 'mobile-menu',
+            'menu_class' => 'mobile-menu mobile-bottom-wrapper',
+            'container_class' => 'header-bottom__mobile-menu',
+            'container'       => 'nav',
+            
+        )
+    );
     ?>
 </div>

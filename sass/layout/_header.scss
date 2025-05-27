@@ -33,8 +33,8 @@
       text-align: left;
       margin-left: 0.2rem;
     }
-    @include sm {
-      text-align: center;
+    @include md {
+      text-align: right;
     }
   }
   &__logon {
@@ -48,43 +48,46 @@
     }
   }
 }
+
 .header-main {
   grid-area: header-main;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   &__site-branding {
     display: none;
     @include md {
+      display: flex;
+      justify-content: center;
       width: 20%;
-      display: block;
-      // margin-right: 0.5rem;
+    }
+    &__logo {
+      height: 9rem;
+      display: flex;
+      flex-direction: column;
     }
   }
   &__searchbar {
     width: 100%;
-    display: flex;
-    @include md {
-      width: 78%;
-      // transform: translateX(-10%);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @include md{
+      width: 78%;      
     }
   }
 }
 
-.site-branding__logo {
-  height: 9rem;
-  display: flex;
-  flex-direction: column;
-}
-
 .header-bottom {
-  grid-area: header-bottom;
+  grid-area: unset;
   display: flex;
   justify-content: center;
-  display: none;
   @include components.nav-menu;
-  @include md {
-    display: block;
+  &__main-menu {
+    display: flex;
+    display: none;
+    @include md {
+      display: block;
+      justify-content: center;
+    }
   }
 }

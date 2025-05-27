@@ -1,4 +1,5 @@
 assets/
 main.css
 main.css.map
-vendors/
+vendors/fontawesome
+node_modules

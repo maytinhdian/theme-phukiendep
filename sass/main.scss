@@ -1,34 +1,46 @@
 @charset "UTF-8";
 
 // 1. Vendors
-@use 'vendors/normalize';
+@use "vendors/normalize";
 
 // 2. Base stuff
-@use 'base/base';
-@use 'base/fonts';
-@use 'base/helpers';
-@use 'base/typography';
+@use "base/base";
+@use "base/fonts";
+@use "base/helpers";
+@use "base/typography";
 
 // 3. Layout-related sections
-@use 'layout/footer';
-@use 'layout/header';
-@use 'layout/grid';
+@use "layout/footer";
+@use "layout/header";
+@use "layout/grid";
 
 // 4. Components
-@use 'components/button';
-@use 'components/navbar';
+@use "components/button";
+@use "components/navbar";
 
 // 5. Pages
-@use 'pages/home';
-@use 'pages/blog';
-@use 'pages/archive-product';
+@use "pages/home";
+@use "pages/blog";
+@use "pages/archive-product";
+@use "pages/single_product";
 
 // 6. Themes
-@use 'themes/default';
-
+@use "themes/default";
 
 // 7. Vendors
-@use 'vendors/fontawesome/fontawesome.scss';
-@use 'vendors/fontawesome/solid.scss';
-@use 'vendors/fontawesome/brands.scss';
-@use 'vendors/fontawesome/regular.scss';
+/**
+    * Font Awesome
+    * Ensure you have the correct path to your Font Awesome SCSS files.
+    * Adjust the paths as necessary based on your project structure.
+   
+*/
+@use "vendors/fontawesome/fontawesome.scss";
+@use "vendors/fontawesome/solid.scss";
+@use "vendors/fontawesome/brands.scss";
+@use "vendors/fontawesome/regular.scss";
+
+/**
+    *WooCommerce
+    * Ensure you have the correct path to your WooCommerce SCSS files.
+*/
+@use "vendors/woocommerce/index";

@@ -52,6 +52,7 @@ function phukiendep_setup()
 	register_nav_menus(
 		array(
 			'nav-menu' => esc_html__('Primary', 'phukiendep'),
+			'mobile-menu' => esc_html__('Bottom', 'phukiendep'),
 		)
 	);
 

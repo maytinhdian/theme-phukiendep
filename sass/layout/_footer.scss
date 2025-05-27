@@ -1,4 +1,11 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+@use "../abstracts/"as *;
 
+.site-footer {
+  display: none;
+  @include md {
+    display: block;
+  }
+}
