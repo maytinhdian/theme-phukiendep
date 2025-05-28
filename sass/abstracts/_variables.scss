@@ -12,7 +12,7 @@ $text-font-stack: "Roboto", "Inter", "Coiny", sans-serif !default;
 $code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
   "Monaco", monospace !default;
 
-$fa-font-path: "../../assets/fonts/webfonts";
+$fa-font-path: "assets/fonts/webfonts" !default;
 
 ///Theme Color
 /// @type Color
@@ -81,42 +81,42 @@ $asset-url: "#{$site-url}wp-content/themes/#{$theme-name}/assets/" !default;
 $font-faces: (
   (
     "family": "Roboto",
-    "path": "#{$asset-url}fonts/roboto/Roboto-Regular.ttf",
+    "path": "assets/fonts/roboto/Roboto-Regular.ttf",
     "format": "truetype",
     "weight": normal,
     "style": normal,
   ),
   (
     "family": "Roboto",
-    "path": "#{$asset-url}fonts/roboto/Roboto-SemiBold.ttf",
+    "path": "assets/fonts/roboto/Roboto-SemiBold.ttf",
     "format": "truetype",
     "weight": bold,
     "style": normal,
   ),
   (
     "family": "Roboto",
-    "path": "#{$asset-url}fonts/roboto/Roboto-BlackItalic.ttf",
+    "path": "assets/fonts/roboto/Roboto-BlackItalic.ttf",
     "format": "truetype",
     "weight": normal,
     "style": italic,
   ),
   (
     "family": "Roboto",
-    "path": "#{$asset-url}fonts/roboto/Roboto-Bold.ttf",
+    "path": "assets/fonts/roboto/Roboto-Bold.ttf",
     "format": "truetype",
     "weight": bold,
     "style": normal,
   ),
   (
     "family": "Roboto",
-    "path": "#{$asset-url}fonts/roboto/Roboto-BoldItalic.ttf",
+    "path": "assets/fonts/roboto/Roboto-BoldItalic.ttf",
     "format": "truetype",
     "weight": bold,
     "style": italic,
   ),
   (
     "family": "Coiny",
-    "path": "#{$asset-url}fonts/coiny-regular.ttf",
+    "path": "assets/fonts/coiny-regular.ttf",
     "format": "truetype",
     "weight": normal,
     "style": normal,

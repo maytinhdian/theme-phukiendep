@@ -4,6 +4,9 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
+import Swiper from 'swiper';
+import 'swiper/css';
+
 (function () {
   const siteNavigation = document.getElementById("site-navigation");
 
@@ -100,23 +103,3 @@
   }
 })();
 
-/***
- * Khởi tạo Swiper slider
- */
-const pkd_slider = new Swiper('.pkd-slider', {
-  loop: true,
-  slidesPerView: 1,
-  spaceBetween: 10,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-  breakpoints: {
-    600: { slidesPerView: 2 },
-    1000: { slidesPerView: 3 }
-  }
-});
