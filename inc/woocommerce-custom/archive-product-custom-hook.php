@@ -24,6 +24,18 @@ function pkd_woocommerce_output_content_wrapper()
     }
 }
 
+/***
+ * Custom end wrapper for breadcrumb
+ */
+add_action('woocommerce_before_main_content', 'pkd_woocommerce_breadcrumb_wrapper_end', 22);
+function pkd_woocommerce_breadcrumb_wrapper_end()
+{
+ 
+
+        echo '</div> <!-- End #single-product__breadcrumb --> ';
+
+}
+
 
 
 /***
@@ -42,9 +54,8 @@ function pkd_woocommerce_output_content_wrapper_end()
                     </div><!-- End #pkd-container -->
                         </div><!-- End #pkd-content__wrapper -->';
     } elseif (is_product()) {
-        echo '  <!--End #single-product__wrapper-->
-                    </div> <!--End #single-product__container-->
-                        </div> <!--End #single-product__breadcrumbs-->';
+        echo '</div> <!--End #single-product__container-->
+                    </div> <!--End #single-product__wrapper-->';
     }
 }
 /*** 
