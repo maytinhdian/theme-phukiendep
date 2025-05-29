@@ -146,9 +146,10 @@ function phukiendep_scripts()
 {
 	wp_enqueue_style('phukiendep-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_enqueue_style('main-style', get_template_directory_uri() . '/main.css', array(), _S_VERSION);
-	wp_style_add_data('phukiendep-style', 'rtl', 'replace');
+		wp_style_add_data('phukiendep-style', 'rtl', 'replace');
 
 	wp_enqueue_script('phukiendep-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -203,3 +204,16 @@ if (defined('JETPACK__VERSION')) {
 if (class_exists('WooCommerce')) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+add_action('wp_enqueue_scripts', function() {
+    if (is_product()) {
+        // Nạp Swiper CSS
+        wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css');
+        // Nạp Swiper JS BUNDLE (bắt buộc trước file init)
+        wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), null, true);
+        // Nạp script khởi tạo Swiper (phụ thuộc vào swiper-js)
+        wp_enqueue_script('pkd-swiper-init', get_template_directory_uri() . '/assets/js/pkd-swiper-init.js', array('swiper-js'), null, true);
+    }
+});
+
+

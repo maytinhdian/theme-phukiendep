@@ -108,22 +108,56 @@ function phukiendep_woocommerce_related_products_args($args)
  * Load Content Product Hook Custom.
  * Base on: template content-product.php 
  */
-function debug_woocommerce_content_wrapper() {
-    if ( is_shop() ) {
-        error_log('woocommerce_output_content_wrapper được gọi ở: Shop');
-    } elseif ( is_product() ) {
-        error_log('woocommerce_output_content_wrapper được gọi ở: Single Product');
-    } elseif ( is_product_category() ) {
-        error_log('woocommerce_output_content_wrapper được gọi ở: Product Category');
-    } elseif ( is_cart() ) {
-        error_log('woocommerce_output_content_wrapper được gọi ở: Cart');
-    } elseif ( is_checkout() ) {
-        error_log('woocommerce_output_content_wrapper được gọi ở: Checkout');
-    } else {
-        error_log('woocommerce_output_content_wrapper được gọi ở: Trang khác');
-    }
+function debug_woocommerce_content_wrapper()
+{
+	if (is_shop()) {
+		error_log('woocommerce_output_content_wrapper được gọi ở: Shop');
+	} elseif (is_product()) {
+		error_log('woocommerce_output_content_wrapper được gọi ở: Single Product');
+	} elseif (is_product_category()) {
+		error_log('woocommerce_output_content_wrapper được gọi ở: Product Category');
+	} elseif (is_cart()) {
+		error_log('woocommerce_output_content_wrapper được gọi ở: Cart');
+	} elseif (is_checkout()) {
+		error_log('woocommerce_output_content_wrapper được gọi ở: Checkout');
+	} else {
+		error_log('woocommerce_output_content_wrapper được gọi ở: Trang khác');
+	}
 }
 add_action('woocommerce_before_main_content', 'debug_woocommerce_content_wrapper', 9); // Ưu tiên nhỏ hơn 10 để chạy trước function gốc
+
+// Gỡ hook hiển thị ảnh mặc định WooCommerce
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
+
+// Thêm custom Swiper gallery
+add_action('woocommerce_before_single_product_summary', 'pkd_wc_swiper_product_gallery', 20);
+
+/***
+ * Hiển thị gallery sử dụng Swiper.js thay cho gallery mặc định của WooCommerce
+ */
+function pkd_wc_swiper_product_gallery()
+{
+	global $product;
+	$attachment_ids = $product->get_gallery_image_ids();
+	$main_img_id = $product->get_image_id();
+?>
+	<div class="swiper pkd-product-gallery" id="pkd-product-gallery">
+		<div class="swiper-wrapper">
+
+			<?php foreach ($attachment_ids as $attachment_id) : ?>
+				<div class="swiper-slide">
+					<?php echo wp_get_attachment_image($attachment_id, 'large'); ?>
+				</div>
+			<?php endforeach; ?>
+		</div><!-- End #pkd-product-gallery__wrapper -->
+		<!-- Pagination -->
+		<div class="swiper-pagination "></div>
+		<!-- Navigation -->
+		<div class="swiper-button-next "></div>
+		<div class="swiper-button-prev "></div>
+	</div><!-- End #pkd-product-gallery -->
+<?php
+}
 
 
 require get_template_directory() . '/inc/woocommerce-custom/archive-product-custom-hook.php';
