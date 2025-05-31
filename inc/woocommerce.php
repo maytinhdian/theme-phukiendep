@@ -50,7 +50,7 @@ function phukiendep_woocommerce_setup()
 add_action('wp_enqueue_scripts', 'phukiendep_woocommerce_scripts');
 function phukiendep_woocommerce_scripts()
 {
-	wp_enqueue_style('phukiendep-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION);
+	// wp_enqueue_style('phukiendep-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION);
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {

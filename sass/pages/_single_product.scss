@@ -1,28 +1,27 @@
+@use "../abstracts/" as *;
+
 .single-product__wrapper {
   grid-area: 2/1/4/4;
 }
-.single-product__container {
-  //   background-color: aqua;
-  padding: 1rem;
-}
 
-ul.tabs {
+.single-product__container {
   display: flex;
-  width: 100%;
-  list-style-type: none;
-  padding: 0;
-  justify-content: space-evenly;
-  & li {
-    margin-right: 2rem;
-    text-align: center;
-  }
+  flex-flow: row wrap;
 }
 .single-product__breadcrumbs {
-  padding: 1rem;
+  width: 100%;
 }
-.pkd-product-gallery {
-  width: 600px;
+
+.swiper {
+  width: 300px;
+  height: 500px;
+  @include md {
+    width: 600px;
+  }
 }
-.swiper-wrapper{
+
+div[id^="product-"] {
+  border: 1px solid red;
+  display: flex;
   width: 100%;
 }

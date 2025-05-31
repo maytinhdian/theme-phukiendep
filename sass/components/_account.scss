@@ -1,19 +1,14 @@
 @use "sass:map";
 @use "../abstracts/" as *;
+
 .account {
   display: inline-flex;
-  align-items: center;
-  // padding-right: 1rem;
-  text-transform: capitalize;
-  font-size: 1.6rem;
-  gap: 1rem;
-  &-avatar{
+  &-avatar {
+    display: none;
     color: map.get($theme-color-light, "primary-color");
   }
-  & img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  &-name{
+    display: none;
   }
 }
 
