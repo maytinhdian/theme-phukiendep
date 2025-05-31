@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 @use "sass:map";
 @use "sass:color";
+
 /// Regular font family
 /// @type List
 $text-font-stack: "Roboto", "Inter", "Coiny", sans-serif !default;
@@ -120,6 +121,20 @@ $font-faces: (
     "format": "truetype",
     "weight": normal,
     "style": normal,
+  ),
+  (
+    "family": "Montserrat Variable",
+    "path": "assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf",
+    "format": "truetype-variations",
+    "weight": 100 900,
+    "style": normal,
+  ),
+  (
+    "family": "Montserrat Variable",
+    "path": "assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf",
+    "format": "truetype-variations",
+    "weight": 100 900,
+    "style": italic,
   )
 ) !default;
 

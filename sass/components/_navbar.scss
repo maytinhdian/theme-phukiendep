@@ -5,19 +5,19 @@
   ul {
     display: flex;
     padding: 0;
-  }
-  li {
-    padding: 1rem 2rem;
     list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-    color: map.get(abstracts.$theme-color-light, "text-color-white");
-    font-family: "Coiny", sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
+    & li {
+      padding: 1rem 2rem;
+      & a {
+        text-decoration: none;
+        color: map.get(abstracts.$theme-color-light, "text-color-white");
+        font-family: "Montserrat Variable", sans-serif;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+      }
+    }
   }
   ul li a:before {
     content: "";

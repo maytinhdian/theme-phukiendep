@@ -1,5 +1,5 @@
-<div class="header-bottom responsive-test>
-    <nav id=" site-navigation class="header-bottom__main-navigation">
+<div class="header-bottom">
+   
     <?php
     wp_nav_menu(
         array(
@@ -11,7 +11,7 @@
     );
 
     ?>
-    </nav><!-- #site-navigation -->
+   
 </div>
 <div class="mobile-bottom-wrapper">
     <?php
@@ -23,7 +23,7 @@
             'menu_class' => 'mobile-menu mobile-bottom-wrapper',
             'container_class' => 'header-bottom__mobile-menu',
             'container'       => 'nav',
-            
+
         )
     );
     ?>

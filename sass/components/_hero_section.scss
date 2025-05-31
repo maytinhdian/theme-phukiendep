@@ -1,15 +1,6 @@
 @use "../abstracts" as *;
 @use "sass:map";
 
-.hero-section_1 {
-    flex-grow: 1;
-    // width: 90%;
-    min-height: 50vh;
-  background-color: map.get($theme-color-light, "accent-color");
-  border-width: 5px;
-  border-style: solid;
-  border-color: map.get($theme-color-light, "primary-color");
-  border-radius: 5px;
+.hero-section {
   box-shadow: 0 0 10px rgba(232, 235, 233, 0.562);
-  padding: 2rem;
 }

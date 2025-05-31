@@ -3,16 +3,11 @@
 @use "../abstracts/" as *;
 
 .searchbar {
-  box-sizing: border-box;
   display: flex;
   width: 100%;
-  height: 50px;
-  background-color: color.adjust(
-    map.get($theme-color-light, "background-color"),
-    $lightness: 50%
-  );
-  // padding-block: 8px;
-  border-radius: 5rem;
+  height: 5rem;
+  background-color: map.get($theme-color-light, "link-color");
+  border-radius: 1rem;
   align-items: center;
   i {
     color: map.get($theme-color-light, "border-color");
@@ -21,13 +16,14 @@
     padding-right: 1rem;
   }
   & input {
-    width: auto;
+    width: 100%;
     height: auto;
     outline: none;
     border: none;
     background-color: transparent;
     color: map.get($theme-color-light, "text-color-white");
     font-size: 2rem;
+    letter-spacing: 1px;
   }
   & input::placeholder {
     color: map.get($theme-color-light, "text-color-white");
