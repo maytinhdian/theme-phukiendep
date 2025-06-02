@@ -17,8 +17,14 @@ get_header();
 ?>
 
 <main id="primary" class="home__main">
-	
-	<?php get_template_part('template-parts/component/hero', 'section', array()); ?>
+	<div class="line-break"></div>
+	<div class="main-slider">
+		<?php get_template_part('template-parts/component/carousel', 'home', array()); ?>
+	</div>
+	<div class="line-break"></div>
+	<div class="main-section">
+		<?php get_template_part('template-parts/component/hero', 'section', array()); ?>
+	</div>
 </main><!-- #main -->
 
 <?php

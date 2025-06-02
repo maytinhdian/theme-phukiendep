@@ -206,7 +206,7 @@ if (class_exists('WooCommerce')) {
 }
 
 add_action('wp_enqueue_scripts', function() {
-    if (is_product()) {
+    if (is_product() || is_home() || is_front_page()) {
         // Nạp Swiper CSS
         wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css');
         // Nạp Swiper JS BUNDLE (bắt buộc trước file init)

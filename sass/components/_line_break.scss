@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+@use "sass:map";
+@use "sass:color";
+.line-break {
+  width: 100%;
+  height: 2px;
+  background: map.get($theme-color-light, 'primary-color');
+  margin: 1rem 0; // khoảng cách trên dưới
+  border: none;
+}
+

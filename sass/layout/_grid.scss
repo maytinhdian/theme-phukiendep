@@ -2,8 +2,6 @@
 
 .main-container {
   display: grid;
-  width: 100%;
-  padding: 0 0.5rem;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
@@ -11,5 +9,10 @@
     "content"
     "footer"
     "menu";
-  row-gap: 1rem;
+  gap: 1rem;
+}
+
+.site-footer {
+  grid-area: footer;
+  margin-inline: 1rem;
 }
