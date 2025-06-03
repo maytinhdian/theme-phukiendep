@@ -12,13 +12,13 @@
   width: 100%;
 }
 
-.swiper {
-  width: 300px;
-  height: 500px;
-  @include md {
-    width: 600px;
-  }
-}
+// .swiper {
+//   width: 300px;
+//   height: 100px;
+//   @include md {
+//     width: 600px;
+//   }
+// }
 
 div[id^="product-"] {
   border: 1px solid red;

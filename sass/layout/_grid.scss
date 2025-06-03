@@ -4,15 +4,23 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
+  place-items: center;
+  gap: 1rem;
   grid-template-areas:
     "header"
     "content"
     "footer"
     "menu";
-  gap: 1rem;
 }
-
+.site-header {
+  grid-area: header;
+  width: 95%;
+}
 .site-footer {
   grid-area: footer;
-  margin-inline: 1rem;
+  width: 95%;
+}
+#primary.home__main{
+  grid-area: content;
+  width: 95%;
 }

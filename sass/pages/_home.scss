@@ -4,3 +4,7 @@
 @use "sass:map";
 @use "sass:color";
 @use "../abstracts" as *;
+
+.main-slider {
+  max-width: 95vw;
+}
