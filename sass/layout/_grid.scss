@@ -2,6 +2,12 @@
 
 .main-container {
   display: grid;
+
+  max-width: $max-width;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   place-items: center;
@@ -14,13 +20,13 @@
 }
 .site-header {
   grid-area: header;
-  width: 95%;
+  width: 100%;
 }
 .site-footer {
   grid-area: footer;
-  width: 95%;
+  width: 100%;
 }
-#primary.home__main{
+#primary.home__main {
   grid-area: content;
-  width: 95%;
+  width: 100%;
 }

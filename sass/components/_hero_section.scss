@@ -3,4 +3,19 @@
 
 .hero-section {
   box-shadow: 0 0 10px rgba(232, 235, 233, 0.562);
+  &__title {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  &__heading {
+    width: 50%;
+    
+  }
+  &__description {
+    width: 50%;
+    text-align: right;
+    
+  }
 }

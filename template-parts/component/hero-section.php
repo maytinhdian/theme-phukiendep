@@ -1,5 +1,9 @@
 
 <div class="hero-section">
+    <div class="hero-section__title">
+        <h1 class="hero-section__heading">Laptop 99%</h1>
+        <p class="hero-section__description">Xem thêm >></p>
+        <div class="line-break"></div>
     <div class="hero-section__content">
         <div class="content__img">
             <img src="http://phukiendep.local/wp-content/uploads/2025/05/Laptop600x400.png" alt="Hero Image" class="hero-image" />

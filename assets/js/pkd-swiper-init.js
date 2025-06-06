@@ -1,31 +1,18 @@
-/***
- * Khởi tạo Swiper cho WooCommerce Product Gallery - dùng npm
- */
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  if (document.querySelector(".mySwiper")) {
-    var swiper = new Swiper(".mySwiper", {
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
+  if (document.querySelector(".main-swiper")) {
+    var swiper = new Swiper(".main-swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      loop: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
       },
-      speed: 700,
+      speed : 900,
     });
   }
 });
