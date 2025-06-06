@@ -1,4 +1,3 @@
-
 // Import variables
 @use "../abstracts/" as *;
 @use "sass:map";
@@ -13,7 +12,7 @@ $pkd-theme: $theme-color-light !default;
 
 // Base variables
 $pkd-border-radius: 8px !default;
-$pkd-font-main: "Roboto", Arial, sans-serif !default;
+$pkd-font-main: "Roboto", "Coiny", sans-serif !default;
 
 // Reset CSS
 *,
@@ -32,18 +31,6 @@ body {
   font-size: 1.6rem;
   background: pkd-color("background-color");
   color: pkd-color("text-color-white");
-  line-height: 1.5;
-  box-sizing: border-box;
-}
-
-a {
-  color: pkd-color("link-color");
-  text-decoration: none;
-  transition: color 0.2s;
-  &:hover,
-  &:focus {
-    color: pkd-color("primary-color");
-  }
 }
 
 img {
@@ -51,55 +38,23 @@ img {
   height: auto;
   display: block;
 }
-
-// BEM: Button block
-.pkd-btn {
-  display: inline-block;
-  padding: 0.75em 1.5em;
-  border-radius: $pkd-border-radius;
-  background: pkd-color("primary-color");
-  color: pkd-color("text-color-black");
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s;
-  &--secondary {
-    background: pkd-color("secondary-color");
-    color: pkd-color("text-color-white");
-  }
-  &--outline {
-    background: transparent;
-    border: 2px solid pkd-color("primary-color");
-    color: pkd-color("primary-color");
-  }
+a {
+  text-decoration: none;
+  color: pkd-color("white-color");
+  transition: color 0.3s ease;
   &:hover {
-    background: pkd-color("accent-color");
-    color: pkd-color("text-color-white");
+    color: pkd-color("primary-color");
   }
 }
 
-// Typography
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
-  font-weight: 700;
+  margin: 0;
+  font-family: "Montserrat Variable", sans-serif;
   color: pkd-color("primary-color");
-}
-
-// Utilities
-.pkd-mt-2 {
-  margin-top: 2rem;
-}
-.pkd-mb-2 {
-  margin-bottom: 2rem;
-}
-.pkd-text-center {
-  text-align: center;
-}
-.pkd-text-gray {
-  color: pkd-color("text-color-gray");
+  letter-spacing: 1px;
 }
