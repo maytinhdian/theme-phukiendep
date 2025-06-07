@@ -206,14 +206,22 @@ if (class_exists('WooCommerce')) {
 }
 
 add_action('wp_enqueue_scripts', function() {
-    if (is_product() || is_home() || is_front_page()) {
+    if (is_shop() || is_product() || is_home() || is_front_page()) {
         // Nạp Swiper CSS
         wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css');
         // Nạp Swiper JS BUNDLE (bắt buộc trước file init)
-        wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), null, true);
+        wp_enqueue_script('swiper-bundle', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), null, true);
         // Nạp script khởi tạo Swiper (phụ thuộc vào swiper-js)
-        wp_enqueue_script('pkd-swiper-init', get_template_directory_uri() . '/assets/js/pkd-swiper-init.js', array('swiper-js'), null, true);
+        wp_enqueue_script('pkd-swiper-init', get_template_directory_uri() . '/assets/js/pkd-swiper-init.js', array('swiper-bundle'), null, true);
     }
+	  // Gán thuộc tính type="module" cho script trên
+    add_filter('script_loader_tag', function ($tag, $handle) {
+        if ('pkd-swiper-init' === $handle) {
+            $tag = str_replace('src=', 'type="module" src=', $tag);
+        }
+        return $tag;
+    }, 10, 2);
 });
+
 
 

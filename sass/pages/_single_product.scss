@@ -2,6 +2,7 @@
 
 .single-product__wrapper {
   grid-area: 2/1/4/4;
+  max-width: $max-width;
 }
 
 .single-product__container {
@@ -10,19 +11,33 @@
 }
 .single-product__breadcrumbs {
   width: 100%;
+  margin-bottom: 2rem;
 }
-
+.woocommerce-notices-wrapper {
+  width: 100%;
+}
+.onsale {
+  position: absolute;
+  top: 0;
+  left: 5rem;
+  color: red;
+  z-index: 10;
+  letter-spacing: 1px;
+  font-size: 2.5rem;
+  font-family: "Coiny", sans-serif;
+}
 div[id^="product-"] {
-  border: 1px solid red;
+  position: relative;
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  gap: 2rem;
+  justify-content: center;
 }
-.pkd-product-gallery {
-  margin: 0;
-  max-width: 60%;
-  max-height: 30%;
+.product-gallery-wrapper {
+  flex: 0 0 600px;
+  max-width: 600px;
 }
-.swiper-wrapper{
-  width: 100%;
+
+div.summary.entry-summary {
+  flex: 1;
 }
