@@ -1,11 +1,20 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
-@use "../abstracts/"as *;
+@use "../abstracts/" as *;
 
 .site-footer {
   display: none;
   @include md {
     display: block;
+  }
+}
+
+.footer-categories {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  &__list {
+    width: 25%;
   }
 }

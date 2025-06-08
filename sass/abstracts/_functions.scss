@@ -2,6 +2,8 @@
 // This file contains all application-wide Sass functions.
 // -----------------------------------------------------------------------------
 
+@use "sass:map";
+@use "variables" as *;
 /// Base path for assets (fonts, images...),
 /// should not include trailing slash
 /// @access public
@@ -17,15 +19,21 @@ $asset-base-path: "http://phukiendiep.local/wp-content/themes/phukiendep" !defau
   @return url($asset-base-path + "/" + $type + "/" + $file);
 }
 
-
 ///Create font map
 /// @access public
 /// @param {String} $file - Font file name, including extension
-@function createFontMap($file, $weight:normal, $style:normal) {
+@function createFontMap($file, $weight: normal, $style: normal) {
   $def: (
     fontFile: $file,
     weight: $weight,
-    style: $style
+    style: $style,
   );
   @return $def;
+}
+
+// Function lấy màu từ theme map
+@function get-color($key) {
+  @return map.get($default-theme, $key);
+  @debug
+  "Color for #{$key} is #{map.get($default-theme, $key)}";
 }

@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * Vô hiệu hóa stylesheet mặc định của WooCommerce.
+ * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
+ */
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
+/**
  * Thêm class 'woocommerce-active' vào thẻ body khi WooCommerce được active.
  */
 add_filter('body_class', 'phukiendep_woocommerce_active_body_class');
@@ -24,9 +30,9 @@ function phukiendep_woocommerce_related_products_args($args)
     return $args;
 }
 
-
-/**
- * Vô hiệu hóa stylesheet mặc định của WooCommerce.
- * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
- */
-add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+add_filter('woocommerce_get_price_html', function ($price_html, $product) {
+    if ($product->is_on_sale()) {
+        $price_html = '<span class="my-sale-icon">🔥 Giảm sập sàn </span>' . $price_html;
+    }
+    return $price_html;
+}, 10, 2);

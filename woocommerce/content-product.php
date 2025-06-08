@@ -26,16 +26,13 @@ if (! is_a($product, WC_Product::class) || ! $product->is_visible()) {
 }
 ?>
 <li <?php wc_product_class('', $product); ?>>
-
-
   <div class="single-card">
     <div class="img-area">
       <img src="<?php echo pkd_get_product_thumbnail_bem(get_the_ID(), 'pkd-product__image');
                 ?>" alt="">
       <div class="overlay">
-        <button class="add-to-cart"><?php echo pkd_get_product_add_to_cart_button();
-                                    ?></button>
-        <a href="<?php echo pkd_get_product_permalink();; ?>" class="view-details">Xem chi tiet</a>
+        <a href="<?php echo $product->add_to_cart_url(); ?>" class="add-to-cart"><?php echo $product->add_to_cart_text(); ?></a>
+        <a href="<?php echo pkd_get_product_permalink(); ?>" class="view-details">Xem chi tiet</a>
       </div>
     </div>
 
@@ -48,6 +45,4 @@ if (! is_a($product, WC_Product::class) || ! $product->is_visible()) {
           ?></p>
     </div>
   </div>
-  <?php
-  ?>
 </li>

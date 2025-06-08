@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../abstracts";
+@use "../abstracts" as *;
 
 @mixin nav-menu {
   ul {
@@ -7,13 +7,14 @@
     padding: 0;
     list-style-type: none;
     & li {
-      padding: 1rem 2rem;
+      margin-inline: 1rem;
       & a {
         text-decoration: none;
-        color: map.get(abstracts.$theme-color-light, "text-color-white");
+        color: get-color("text-color-white");
         font-family: "Montserrat Variable", sans-serif;
-        font-size: 1.8rem;
+        font-size: 2rem;
         letter-spacing: 1px;
+        font-weight: 700;
         text-transform: uppercase;
         position: relative;
       }
@@ -23,7 +24,7 @@
     content: "";
     width: 0;
     height: 5px;
-    background-color: map.get(abstracts.$theme-color-light, "primary-color");
+    background-color: get-color("primary-color");
     position: absolute;
     top: 120%;
     left: 0;
@@ -33,7 +34,7 @@
     content: "";
     width: 0;
     height: 5px;
-    background-color: map.get(abstracts.$theme-color-light, "primary-color");
+    background-color: get-color("primary-color");
     position: absolute;
     top: 120%;
     right: 0;
@@ -58,8 +59,8 @@
   bottom: 0;
   display: flex;
   justify-content: center;
-  background: #fff;
-  border-top: 1px solid #eee;
+  background-color: get-color("gray-color");
+  // border-top: 1px solid #eee;
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 0.7rem;
   z-index: 99;
@@ -71,29 +72,13 @@
     justify-content: space-around;
     padding: 0;
     gap: 1rem;
+    & i {
+      color: get-color("primary-color");
+    }
   }
-  @include abstracts.md {
+  @include md {
     display: none;
   }
 }
 
-.nav-item {
-  flex: 1 1 0;
-  text-align: center;
-  padding: 8px 0 4px;
-  color: #888;
-  text-decoration: none;
-  font-size: 12px;
-  transition: color 0.2s;
 
-  .icon {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 2px;
-  }
-
-  &.active,
-  &:hover {
-    color: map.get(abstracts.$theme-color-light, "primary-color");
-  }
-}

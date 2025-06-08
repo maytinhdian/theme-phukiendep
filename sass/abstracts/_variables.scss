@@ -29,8 +29,8 @@ $theme-color-light: (
   "background-color": #181818,
   "border-color": #b48800,
   "link-color": #1976d2,
-  "gray-color": #8a8a8a,
-) !default;
+  "gray-color": #414852,
+);
 
 $theme-color-dark: (
   "primary-color": #fbc02d,
@@ -43,7 +43,10 @@ $theme-color-dark: (
   "background-alt": #181820,
   "border-color": #2a2a33,
   "link-color": #ffa7de,
-) !default;
+);
+
+// Mặc định dùng theme light từ file biến
+$default-theme: $theme-color-light !default;
 
 ///Site container max width
 /// @type Number

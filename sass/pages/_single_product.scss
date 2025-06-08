@@ -40,4 +40,69 @@ div[id^="product-"] {
 
 div.summary.entry-summary {
   flex: 1;
+  & nav.woocommerce-breadcrumb {
+    font-size: 1.3rem;
+  }
+}
+.woocommerce-tabs {
+  width: 100%;
+  & ul {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0;
+    row-gap: 1rem;
+    & li {
+      flex: 1 0 auto;
+      position: relative;
+      text-transform: uppercase;
+
+      text-align: center;
+
+      &:hover {
+        border-bottom-width: 0px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: get-color("primary-color");
+        height: 2px;
+        width: 0;
+        transition: width 0.3s;
+      }
+      &:hover::before {
+        width: 100%;
+      }
+    }
+  }
+}
+form.cart {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 2rem;
+  & .quantity {
+    width: 50%;
+    @include md {
+      width: auto;
+    }
+  }
+  & .button {
+    width: 50%;
+    @include md {
+      width: auto;
+    }
+  }
+}
+
+.woocommerce-product-details__short-description {
+  width: 100%;
+  border: 1px solid get-color("border-color");
+  padding: 1rem;
 }

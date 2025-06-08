@@ -45,15 +45,14 @@
   }
 }
 .header-bottom {
+  width: 100%;
   &__main-menu {
     display: none;
     @include md {
-      display: flex;
+      display: flex;    
       justify-content: center;
       @include components.nav-menu;
-      & {
-        width: 100%;
-      }
+   
     }
   }
 }

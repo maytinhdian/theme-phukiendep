@@ -57,3 +57,11 @@ function debug_woocommerce_content_wrapper()
     }
 }
 add_action('woocommerce_before_main_content', 'debug_woocommerce_content_wrapper', 9); // Ưu tiên nhỏ hơn 10 để chạy trước function gốc
+
+
+
+add_action( 'wp', function() {
+    if ( is_product() ) {
+        remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+    }
+});

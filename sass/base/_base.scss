@@ -2,13 +2,9 @@
 @use "../abstracts/" as *;
 @use "sass:map";
 
-// Mặc định dùng theme light từ file biến
-$pkd-theme: $theme-color-light !default;
 
-// Function lấy màu từ theme map
-@function pkd-color($key) {
-  @return map.get($pkd-theme, $key);
-}
+
+
 
 // Base variables
 $pkd-border-radius: 8px !default;
@@ -29,8 +25,8 @@ body {
   padding: 0;
   font-family: $pkd-font-main;
   font-size: 1.6rem;
-  background: pkd-color("background-color");
-  color: pkd-color("text-color-white");
+  background: get-color("background-color");
+  color: get-color("text-color-white");
 }
 
 img {
@@ -40,10 +36,10 @@ img {
 }
 a {
   text-decoration: none;
-  color: pkd-color("white-color");
+  color: get-color("white-color");
   transition: color 0.3s ease;
   &:hover {
-    color: pkd-color("primary-color");
+    color: get-color("primary-color");
   }
 }
 
@@ -55,6 +51,6 @@ h5,
 h6 {
   margin: 0;
   font-family: "Montserrat Variable", sans-serif;
-  color: pkd-color("primary-color");
+  color: get-color("primary-color");
   letter-spacing: 1px;
 }
