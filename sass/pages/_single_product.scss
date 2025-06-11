@@ -34,8 +34,12 @@ div[id^="product-"] {
   justify-content: center;
 }
 .product-gallery-wrapper {
-  flex: 0 0 600px;
-  max-width: 600px;
+  flex: 0 0 320px;
+  max-width: 320px;
+  @include md {
+    flex: 0 0 600px;
+    max-width: 600px;
+  }
 }
 
 div.summary.entry-summary {
@@ -47,23 +51,29 @@ div.summary.entry-summary {
 .woocommerce-tabs {
   width: 100%;
   & ul {
-    width: 100%;
     display: flex;
     list-style-type: none;
     flex-flow: row wrap;
     justify-content: center;
     padding: 0;
-    row-gap: 1rem;
+    column-gap: 0.3rem;
+    & li.reviews_tab {
+      display: none;
+      @include md {
+        display: block;
+      }
+    }
     & li {
       flex: 1 0 auto;
       position: relative;
+      font-size: small;
       text-transform: uppercase;
 
-      text-align: center;
-
-      &:hover {
-        border-bottom-width: 0px;
+      @include md {
+        text-align: center;
+        font-size: large;
       }
+
       &::before {
         content: "";
         position: absolute;
@@ -86,15 +96,15 @@ form.cart {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 2rem;
+  column-gap: 0.3rem;
   & .quantity {
-    width: 50%;
+    flex: 0 0 auto;
     @include md {
       width: auto;
     }
   }
   & .button {
-    width: 50%;
+    flex: 1 1 50%;
     @include md {
       width: auto;
     }
@@ -105,4 +115,17 @@ form.cart {
   width: 100%;
   border: 1px solid get-color("border-color");
   padding: 1rem;
+}
+.product_meta{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  & span {
+    font-size: small;
+    width: 100%;
+    @include md {
+      font-size: medium;
+    }
+  }
 }

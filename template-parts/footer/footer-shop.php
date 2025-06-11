@@ -16,23 +16,36 @@
             <p>VGA</p>
             <p>CASE | NGUỒN</p>
         </div>
-        <div class="footer-categories__list">
+        <div class="footer-categories__list footer-brands__list">
             <h4>Thương hiệu</h4>
-            <p>DELL</p>
-            <p>HP</p>
-            <p>ASUS</p>
-            <p>LENOVO</p>
-            <p>ARUBA</p>
-            <p>H3C</p>
+            <?php
+            $brands = get_terms([
+                'taxonomy' => 'product_brand', // Đổi thành taxonomy bạn dùng nếu khác
+                'hide_empty' => false,         // true: chỉ lấy brand có sản phẩm
+                'number'     => 6,               // chỉ lấy 5 brand
+            ]);
+            if (!is_wp_error($brands)) {
+                foreach ($brands as $brand) {
+                    echo '<p class="product-brand__item"><a href="' . get_term_link($brand->name, 'product_brand') . '">' . $brand->name . '</a></p>'; // Output: https://yourdomain.com/brand/brand-name/
+                }
+            }
+            ?>
         </div>
         <div class="footer-categories__list">
             <h4>Phụ kiện | Đồ trang trí</h4>
-            <p>Tai nghe không dây</p>
-            <p>Chuột máy tính</p>
-            <p>Bàn phím cơ</p>
-            <p>Loa bluetooth</p>
-            <p>Tai nghe có dây</p>
-            <p>Đồ linh tinh</p>
+            <?php
+            $terms = get_terms([
+                'taxonomy' => 'product_cat', // Đổi thành taxonomy bạn dùng nếu khác
+                'hide_empty' => false,         // true: chỉ lấy brand có sản phẩm
+                'number'     => 6,               // chỉ lấy 5 brand
+                'exclude'    => array( get_term_by( 'slug', 'uncategorized', 'product_cat' )->term_id ),
+            ]);
+            if (!is_wp_error( $terms)) {
+                foreach ( $terms as $term) {
+                    echo '<p class="product-category__item"><a href="' . get_term_link($term->name, 'product_cat') . '">' . $term->name . '</a></p>'; // Output: https://yourdomain.com/brand/brand-name/
+                }
+            }
+            ?>
         </div>
         <div class="footer-copyright">
             <h6 class="footer-copyright-title">

@@ -1,2 +1,61 @@
-
-
+@use "../abstracts/" as *;
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 0.7em;
+  @include md {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1em;
+  }
+}
+h2 {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 0.6em;
+  @include md {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8em;
+  }
+}
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+  @include md {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 0.6em;
+  }
+}
+h4 {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0.4em;
+  @include md {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+  }
+}
+h5 {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.3em;
+  @include mb {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 0.4em;
+  }
+}
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 0.2em;
+  @include mb {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 0.3em;
+  }
+}

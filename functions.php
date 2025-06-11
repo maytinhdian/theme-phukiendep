@@ -223,5 +223,34 @@ add_action('wp_enqueue_scripts', function() {
     }, 10, 2);
 });
 
+add_action('init', 'register_product_brand_taxonomy');
+function register_product_brand_taxonomy() {
+    $labels = array(
+        'name'              => _x('Brands', 'taxonomy general name', 'textdomain'),
+        'singular_name'     => _x('Brand', 'taxonomy singular name', 'textdomain'),
+        'search_items'      => __('Search Brands', 'textdomain'),
+        'all_items'         => __('All Brands', 'textdomain'),
+        'parent_item'       => __('Parent Brand', 'textdomain'),
+        'parent_item_colon' => __('Parent Brand:', 'textdomain'),
+        'edit_item'         => __('Edit Brand', 'textdomain'),
+        'update_item'       => __('Update Brand', 'textdomain'),
+        'add_new_item'      => __('Add New Brand', 'textdomain'),
+        'new_item_name'     => __('New Brand Name', 'textdomain'),
+        'menu_name'         => __('Brands', 'textdomain'),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'brand'),
+        'show_in_rest'      => true, // Bật cho phép REST API
+    );
+
+    register_taxonomy('product_brand', array('product'), $args);
+}
+
 
 
