@@ -36,3 +36,6 @@ add_filter('woocommerce_get_price_html', function ($price_html, $product) {
     }
     return $price_html;
 }, 10, 2);
+
+
+

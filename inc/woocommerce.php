@@ -69,5 +69,8 @@ function phukiendep_woocommerce_scripts()
 
 require get_template_directory() . '/inc/hooks/hook-content-product-custom.php';
 
+require get_template_directory() . '/inc/hooks/woocommerce/product-categories-init.php';
+require get_template_directory() . '/inc/hooks/woocommerce/product-attributes-init.php';
+
 require get_template_directory() . '/inc/hooks/woocommerce/actions/actions.php';
 require get_template_directory() . '/inc/hooks/woocommerce/filters/filters.php';

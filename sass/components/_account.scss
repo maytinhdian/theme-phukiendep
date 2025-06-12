@@ -1,23 +1,14 @@
 @use "sass:map";
 @use "../abstracts/" as *;
 
-.account {
-  display: inline-flex;
-  &-avatar {
-    display: none;
-    color: map.get($theme-color-light, "primary-color");
-  }
-  &-name{
-    display: none;
-  }
+.account-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
-
-.account-exit,
-.drop-icons {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  // background-color: map.get($theme-color-light, "border-color");
+.account-profile,.account-exits {
   text-align: center;
-  line-height: 30px;
+  text-transform: lowercase;
 }

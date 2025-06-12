@@ -9,12 +9,35 @@
         </div>
         <div class="footer-categories__list">
             <h4>Linh kiện máy tính</h4>
-            <p>Mainboard</p>
-            <p>Vi xử lý</p>
-            <p>Bộ nhớ trong</p>
-            <p>SSD | HDD</p>
-            <p>VGA</p>
-            <p>CASE | NGUỒN</p>
+            <?php
+            $slug = 'Linh kiện máy tính'; // thay slug theo tên của bạn
+
+            $term = get_term_by('slug', $slug, 'product_cat');
+
+            if ($term) {
+                $term_id = $term->term_id;
+                error_log('ID của danh mục "' . esc_html($term->name) . '" là: ' . $term_id);
+            } else {
+                error_log('Không tìm thấy danh mục với slug này.');
+            }
+
+
+
+            $parent_id =  $term_id; // ID của danh mục gốc "Linh kiện máy tính"
+            $subcategories = get_terms(array(
+                'taxonomy'   => 'product_cat',
+                'parent'     => $parent_id,
+                'hide_empty' => false,
+            ));
+
+            if (!empty($subcategories)) {
+                foreach ($subcategories as $subcategory) {
+
+                    echo '<p class="product-brand__item"><a href="' . get_term_link($subcategory->name, 'product_cat') . '">' . $subcategory->name . '</a></p>';
+                }
+            }
+
+            ?>
         </div>
         <div class="footer-categories__list footer-brands__list">
             <h4>Thương hiệu</h4>
@@ -34,17 +57,33 @@
         <div class="footer-categories__list">
             <h4>Phụ kiện | Đồ trang trí</h4>
             <?php
-            $terms = get_terms([
-                'taxonomy' => 'product_cat', // Đổi thành taxonomy bạn dùng nếu khác
-                'hide_empty' => false,         // true: chỉ lấy brand có sản phẩm
-                'number'     => 6,               // chỉ lấy 5 brand
-                'exclude'    => array( get_term_by( 'slug', 'uncategorized', 'product_cat' )->term_id ),
-            ]);
-            if (!is_wp_error( $terms)) {
-                foreach ( $terms as $term) {
-                    echo '<p class="product-category__item"><a href="' . get_term_link($term->name, 'product_cat') . '">' . $term->name . '</a></p>'; // Output: https://yourdomain.com/brand/brand-name/
+            $slug = 'Phụ kiện máy tính'; // thay slug theo tên của bạn
+
+            $term = get_term_by('slug', $slug, 'product_cat');
+
+            if ($term) {
+                $term_id = $term->term_id;
+                error_log('ID của danh mục "' . esc_html($term->name) . '" là: ' . $term_id);
+            } else {
+                error_log('Không tìm thấy danh mục với slug này.');
+            }
+
+
+
+            $parent_id =  $term_id; // ID của danh mục gốc "Linh kiện máy tính"
+            $subcategories = get_terms(array(
+                'taxonomy'   => 'product_cat',
+                'parent'     => $parent_id,
+                'hide_empty' => false,
+            ));
+
+            if (!empty($subcategories)) {
+                foreach ($subcategories as $subcategory) {
+
+                    echo '<p class="product-brand__item"><a href="' . get_term_link($subcategory->name, 'product_cat') . '">' . $subcategory->name . '</a></p>';
                 }
             }
+
             ?>
         </div>
         <div class="footer-copyright">
