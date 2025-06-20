@@ -25,7 +25,7 @@ body {
   padding: 0;
   font-family: $pkd-font-main;
   font-size: 1.6rem;
-  background: get-color("background-color");
+  background: get-color("gray-color-darker-20");
   color: get-color("text-color-white");
 }
 
@@ -36,10 +36,11 @@ img {
 }
 a {
   text-decoration: none;
-  color: get-color("white-color");
+  color: get-color("text-color-white");
   transition: color 0.3s ease;
   &:hover {
     color: get-color("primary-color");
+    font-weight: bold;
   }
 }
 

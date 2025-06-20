@@ -17,19 +17,45 @@ $fa-font-path: "assets/fonts/webfonts" !default;
 
 ///Theme Color
 /// @type Color
+///
+$primary-color: #fdc700  !default; //
+$accent-color: #00bcff ;
+$gray-color: #44403b ;
 
 $theme-color-light: (
-  "primary-color": #ffbd39,
+  "primary-color-lighter-20": color.adjust($primary-color, $lightness: +20%),
+  "primary-color-lighter-10": color.adjust($primary-color, $lightness: +10%),
+  "primary-color": $primary-color,
+  "primary-color-darker-10": color.adjust($primary-color, $lightness: -10%),
+  "primary-color-darker-20": color.adjust($primary-color, $lightness: -20%),
+  //Accent color
+  "accent-color-lighter-20": color.adjust($accent-color, $lightness: +20%),
+  "accent-color-lighter-10": color.adjust($accent-color, $lightness: +10%),
+  "accent-color": $accent-color,
+  "accent-color-darker-10": color.adjust($accent-color, $lightness: -10%),
+  "accent-color-darker-20": color.adjust($accent-color, $lightness: -20%),
+  //Gray color
+  "gray-color-lighter-20": color.adjust($gray-color, $lightness: +20%),
+  "gray-color-lighter-10": color.adjust($gray-color, $lightness: +10%),
+  "gray-color": $gray-color,
+  "gray-color-darker-10": color.adjust($gray-color, $lightness: -10%),
+  "gray-color-darker-20": color.adjust($gray-color, $lightness: -20%),
+  //Text color
+  "text-color-white": #f5f5f4,
+);
+
+$theme-color-1: (
+  "primary-color": #fdc700,
   "secondary-color": #2196f3,
   "accent-color": #ff4081,
-  "text-color-white": #ffffff,
+  "text-color-white": #fafaf9,
   "white-color": #ffffff,
   "black-color": #111111,
   "text-color-black": #111111,
   "background-color": #181818,
   "border-color": #b48800,
   "link-color": #1976d2,
-  "gray-color": #414852,
+  "gray-color": #868e96,
 );
 
 $theme-color-dark: (

@@ -1,39 +1,49 @@
 @use "../abstracts" as *;
 @use "sass:map";
+@use "sass:color";
 
+.hero-section__wrapper {
+  padding: 1rem;
+}
 .hero-section {
-  position: relative;
   display: flex;
+  flex-flow: row nowrap;
   width: 100%;
-  min-height: 300px;
-  flex-flow: row wrap;
-  background: #f8f8fc;
-  border: 1px solid rgba(0, 0, 0, 0.05); /* viền trong tối nhẹ */
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05),
-    /* viền trắng ngoài mờ */ 0 6px 20px rgba(0, 0, 0, 0.5); /* bóng đen đậm */
-  border-radius: 12px;
-  padding: 2rem;
+  // height: 500px;
+  gap: 2rem;
+  &__content-left {
+    width: 50%;
+  }
+  &__content-right {
+    width: 50%;
+  }
+}
 
-  gap: 0.5rem;
-  &__header {
-    width: 100%;
-    height: 10rem;
-    display: flex;
-    flex-flow: row wrap;
-  }
-  &__categories {
-    flex: 1 1 35%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    & h1 {
-      margin: 0;
-    }
-  }
-  &__see-more {
-    flex: 1 1 35%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.content-top {
+  width: 100%;
+  height: 50%;
+  background-image: url("assets/images/hero-image.png");
+  background-repeat: repeat;
+  background-size: cover; // hoặc contain
+  background-position: center;
+}
+.content-right,
+.content-left {
+  width: 48%;
+}
+.image-wrapper {
+  & img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 }

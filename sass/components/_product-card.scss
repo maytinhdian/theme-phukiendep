@@ -57,10 +57,10 @@
   flex-basis: 34rem;
   min-height: 45rem;
   margin: auto;
-  box-shadow: 0 2px 20px get-color("black-color");
+  box-shadow: 0 2px 6px get-color("accent-color");
   transition: box-shadow 0.3s ease;
   overflow: hidden;
-  background: get-color("gray-color");
+  background: get-color("gray-color-darker-10");
   border-radius: 1.5rem;
   transition: all 0.8s ease-in-out;
 }
@@ -103,8 +103,8 @@
 
 .add-to-cart,
 .view-details {
-  background-color: get-color("background-color");
-  color: get-color("primary-color");
+  background-color: get-color("accent-color-darker-20");
+  color: get-color("text-color-white");
   padding: 10px 15px;
   border-radius: 4px;
   font-size: 12px;
@@ -115,8 +115,8 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-bottom: 10px;
   &:hover {
-    background-color: get-color("primary-color");
-    color: get-color("background-color");
+    // background-color: get-color("primary-color");
+    color: get-color("primary-color");
     border: none;
   }
 }
@@ -136,6 +136,6 @@
     margin: 0;
     font-size: 30px;
     font-weight: bold;
-    color: get-color("secondary-color");
+    color: get-color("text-color-white");
   }
 }
