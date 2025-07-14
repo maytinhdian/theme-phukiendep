@@ -208,11 +208,11 @@ if (class_exists('WooCommerce')) {
 add_action('wp_enqueue_scripts', function() {
     if (is_shop() || is_product() || is_home() || is_front_page()) {
         // Nạp Swiper CSS
-        wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css');
+        wp_enqueue_style('swiper-css', get_template_directory_uri() . '/assets/vendors/swiper/swiper-bundle.min.css');
         // Nạp Swiper JS BUNDLE (bắt buộc trước file init)
-        wp_enqueue_script('swiper-bundle', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), null, true);
+        wp_enqueue_script('swiper-bundle', get_template_directory_uri() . '/assets/vendors/swiper/swiper-bundle.min.js', array(), null, true);
         // Nạp script khởi tạo Swiper (phụ thuộc vào swiper-js)
-        wp_enqueue_script('pkd-swiper-init', get_template_directory_uri() . '/assets/js/pkd-swiper-init.js', array('swiper-bundle'), null, true);
+        wp_enqueue_script('pkd-swiper-init', get_template_directory_uri() . '/assets/js/pkd-init.js', array('swiper-bundle'), null, true);
     }
 	  // Gán thuộc tính type="module" cho script trên
     add_filter('script_loader_tag', function ($tag, $handle) {
@@ -222,6 +222,21 @@ add_action('wp_enqueue_scripts', function() {
         return $tag;
     }, 10, 2);
 });
+
+add_action('wp_enqueue_scripts', 'enqueue_owl_carousel_assets');
+function enqueue_owl_carousel_assets() {
+    $theme_dir = get_template_directory_uri();
+
+    // CSS Owl Carousel
+    wp_enqueue_style('owl-carousel', $theme_dir . '/assets/vendors/owlcarousel/owl.carousel.min.css');
+    wp_enqueue_style('owl-theme', $theme_dir . '/assets/vendors/owlcarousel/owl.theme.default.min.css');
+
+    // jQuery đã có sẵn trong WordPress, chỉ cần gọi nếu chưa
+    wp_enqueue_script('jquery');
+
+    // JS Owl Carousel
+    wp_enqueue_script('owl-carousel', $theme_dir . '/assets/vendors/owlcarousel/owl.carousel.min.js', array('jquery'), null, true);
+}
 
 add_action('init', 'register_product_brand_taxonomy');
 function register_product_brand_taxonomy() {
